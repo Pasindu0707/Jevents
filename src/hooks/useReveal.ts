@@ -19,14 +19,12 @@ function prepare(el: Element) {
 
 export function useReveal(options: Options = {}) {
   const reduced = usePrefersReducedMotion()
+  const rootMargin = options.rootMargin ?? '0px 0px -10% 0px'
+  const threshold = options.threshold ?? 0.12
+  const staggerMs = options.staggerMs ?? 90
+  const thresholdKey = Array.isArray(threshold) ? threshold.join(',') : String(threshold)
 
   useEffect(() => {
-    const {
-      rootMargin = '0px 0px -10% 0px',
-      threshold = 0.12,
-      staggerMs = 90,
-    } = options
-
     const targets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
 
     // Reduced motion: make everything instant.
@@ -71,6 +69,6 @@ export function useReveal(options: Options = {}) {
 
     for (const el of targets) io.observe(el)
     return () => io.disconnect()
-  }, [options, reduced])
+  }, [reduced, rootMargin, thresholdKey, staggerMs])
 }
 

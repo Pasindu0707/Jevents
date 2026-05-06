@@ -117,15 +117,15 @@ export function Footer() {
               <ul className="mt-5 grid gap-4 text-sm text-[rgb(var(--beige))/0.78]">
                 <li className="flex gap-3">
                   <Mail size={18} className="mt-0.5 opacity-85" />
-                  <span>hello@jevents.example</span>
+                  <span>pmaleeshana7@gmail.com</span>
                 </li>
                 <li className="flex gap-3">
                   <Phone size={18} className="mt-0.5 opacity-85" />
-                  <span>+00 000 000 0000</span>
+                  <span>0778909086</span>
                 </li>
                 <li className="flex gap-3">
                   <MapPin size={18} className="mt-0.5 opacity-85" />
-                  <span>City • Country</span>
+                  <span>Wennappuwa</span>
                 </li>
               </ul>
 
@@ -172,7 +172,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-[rgb(var(--beige))/0.7] md:flex-row md:items-center md:justify-between">
-          <div>© {new Date().getFullYear()} J Events. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Pasindu Fernando. All right reserved</div>
           <div className="flex gap-5">
             <a href="#" className="hover:text-[rgb(var(--beige))]">
               Privacy

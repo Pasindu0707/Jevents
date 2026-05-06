@@ -18,6 +18,9 @@ export function Hero({
   const rootRef = useRef<HTMLElement | null>(null)
   const bgRef = useRef<HTMLDivElement | null>(null)
   const shapesRef = useRef<HTMLDivElement | null>(null)
+  const veilRef = useRef<HTMLDivElement | null>(null)
+  const contentRef = useRef<HTMLDivElement | null>(null)
+  const cueRef = useRef<HTMLDivElement | null>(null)
   const [videoUnavailable, setVideoUnavailable] = useState(false)
 
   useGSAP(
@@ -26,28 +29,80 @@ export function Hero({
       ensureGsapPlugins()
       if (!bgRef.current || !shapesRef.current) return
       if (window.matchMedia && !window.matchMedia('(min-width: 768px)').matches) return
+      if (!rootRef.current) return
+
+      // Cinematic scroll feel: subtle scale + veil shift + drift.
+      gsap.set(bgRef.current, { transformOrigin: '50% 40%' })
+      gsap.set(shapesRef.current, { transformOrigin: '50% 50%' })
 
       gsap.to(bgRef.current, {
-        yPercent: 10,
+        scale: 1.06,
+        yPercent: 8,
         ease: 'none',
         scrollTrigger: {
           trigger: rootRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: 0.6,
+          scrub: 0.8,
         },
       })
 
+      if (veilRef.current) {
+        gsap.fromTo(
+          veilRef.current,
+          { opacity: 0.92 },
+          {
+            opacity: 0.72,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: rootRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.8,
+            },
+          },
+        )
+      }
+
       gsap.to(shapesRef.current, {
-        yPercent: -8,
+        yPercent: -10,
+        rotation: -2,
         ease: 'none',
         scrollTrigger: {
           trigger: rootRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: 0.6,
+          scrub: 0.9,
         },
       })
+
+      if (contentRef.current) {
+        gsap.to(contentRef.current, {
+          yPercent: -4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: rootRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.8,
+          },
+        })
+      }
+
+      if (cueRef.current) {
+        gsap.to(cueRef.current, {
+          autoAlpha: 0,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: rootRef.current,
+            start: 'top top+=40',
+            end: 'top top+=220',
+            scrub: 0.8,
+          },
+        })
+      }
+
+      // (Replaced with the cinematic parallax sequence above.)
     },
     { scope: rootRef, dependencies: [reduced] },
   )
@@ -83,7 +138,10 @@ export function Hero({
         )}
 
         {/* Soft gradient veil */}
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_10%,rgba(246,230,197,0.55),transparent_52%),radial-gradient(1000px_circle_at_70%_40%,rgba(98,121,83,0.45),transparent_58%),linear-gradient(to_bottom,rgba(0,0,0,0.42),rgba(0,0,0,0.55))]" />
+        <div
+          ref={veilRef}
+          className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_10%,rgba(246,230,197,0.55),transparent_52%),radial-gradient(1000px_circle_at_70%_40%,rgba(98,121,83,0.45),transparent_58%),linear-gradient(to_bottom,rgba(0,0,0,0.42),rgba(0,0,0,0.55))]"
+        />
       </div>
 
       {/* Floating botanical shapes (CSS-only) */}
@@ -96,7 +154,10 @@ export function Hero({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col justify-center px-5 pb-24 pt-28 md:px-8 md:pb-28">
+      <div
+        ref={contentRef}
+        className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col justify-center px-5 pb-24 pt-28 md:px-8 md:pb-28"
+      >
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -160,7 +221,10 @@ export function Hero({
       </div>
 
       {/* Scroll cue */}
-      <div className="pointer-events-none absolute bottom-7 left-1/2 z-10 -translate-x-1/2">
+      <div
+        ref={cueRef}
+        className="pointer-events-none absolute bottom-7 left-1/2 z-10 -translate-x-1/2"
+      >
         <div className="flex flex-col items-center gap-3 text-white/70">
           <div className="text-[10px] font-semibold tracking-[0.28em] uppercase">
             Scroll
