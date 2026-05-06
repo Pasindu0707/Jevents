@@ -121,6 +121,10 @@ html.dark {
 [data-reveal].reveal.is-revealed {
   opacity: 1;
   transform: none;
+  clip-path: none;
+}
+
+[data-reveal='clip-reveal'].reveal.is-revealed {
   clip-path: inset(0 0 0 0 round 24px);
 }
 
