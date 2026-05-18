@@ -1,57 +1,84 @@
 @import "tailwindcss";
 
-/* Theme tokens (CSS variables) */
+/* Brand palette — only approved colors */
 :root {
-  /* Brand palette */
-  --beige: 246 230 197; /* #f6e6c5 */
-  --forest: 98 121 83; /* #627953 */
-  --terracotta: 232 153 67; /* #e89943 */
+  --main-100: 206 183 149; /* #ceb795 */
+  --main-200: 232 204 165; /* #e8cca5 */
+  --main-300: 246 230 197; /* #f6e6c5 */
 
-  /* Light theme */
-  --bg: 253 249 241; /* warm ivory */
-  --fg: 25 27 22; /* near black-green */
-  --muted-fg: 74 86 67;
+  --secondary-100: 71 79 68; /* #474f44 */
+  --secondary-200: 80 97 68; /* #506144 */
+  --secondary-300: 99 121 83; /* #637953 */
 
-  --card: 255 252 245; /* warm cream */
-  --card-fg: var(--fg);
+  --final-100: 186 123 70; /* #ba7b46 */
+  --final-200: 207 124 54; /* #cf7c36 */
+  --final-300: 230 154 68; /* #e69a44 */
 
-  --primary: var(--forest);
-  --primary-fg: 250 247 240;
+  --white: 255 255 255;
+  --black: 0 0 0;
 
-  --accent: var(--terracotta);
-  --accent-fg: 25 27 22;
+  /* Legacy aliases */
+  --beige: var(--main-300);
+  --forest: var(--secondary-300);
+  --terracotta: var(--final-300);
 
-  --border: 214 207 188; /* transparent-ish beige */
-  --ring: var(--terracotta);
+  /* Semantic tokens (light) */
+  --bg: var(--main-300);
+  --fg: var(--secondary-100);
+  --muted-fg: var(--secondary-200);
 
-  --shadow-soft: 0 20px 50px -30px rgba(0, 0, 0, 0.35);
-  --shadow-elev: 0 22px 60px -36px rgba(0, 0, 0, 0.5);
+  --card: var(--white);
+  --card-fg: var(--secondary-100);
+
+  --primary: var(--secondary-300);
+  --primary-fg: var(--main-300);
+
+  --accent: var(--final-300);
+  --accent-fg: var(--secondary-100);
+
+  --border: var(--main-100);
+  --ring: var(--final-200);
+
+  --shadow-soft: 0 20px 50px -30px rgba(71, 79, 68, 0.28);
+  --shadow-elev: 0 28px 70px -36px rgba(71, 79, 68, 0.38);
+  --shadow-glow: 0 0 0 1px rgba(230, 154, 68, 0.15), 0 18px 48px -24px rgba(207, 124, 54, 0.35);
 
   color-scheme: light;
 }
 
 html.dark {
-  /* Dark theme */
-  --bg: 20 28 22; /* charcoal green */
-  --fg: 246 230 197; /* beige */
-  --muted-fg: 214 207 188;
+  --bg: 28 32 26;
+  --fg: var(--main-300);
+  --muted-fg: var(--main-200);
 
-  --card: 27 40 31; /* darker green */
-  --card-fg: var(--fg);
+  --card: var(--secondary-100);
+  --card-fg: var(--main-300);
 
-  --primary: var(--terracotta);
-  --primary-fg: 20 28 22;
+  --primary: var(--final-300);
+  --primary-fg: var(--secondary-100);
 
-  --accent: var(--beige);
-  --accent-fg: 20 28 22;
+  --accent: var(--main-200);
+  --accent-fg: var(--secondary-100);
 
-  --border: 138 131 116; /* muted beige */
-  --ring: var(--beige);
+  --border: var(--secondary-200);
+  --ring: var(--main-200);
 
-  --shadow-soft: 0 24px 70px -40px rgba(0, 0, 0, 0.8);
-  --shadow-elev: 0 30px 90px -55px rgba(0, 0, 0, 0.9);
+  --shadow-soft: 0 24px 70px -40px rgba(0, 0, 0, 0.75);
+  --shadow-elev: 0 32px 90px -50px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 0 1px rgba(230, 154, 68, 0.2), 0 20px 56px -28px rgba(207, 124, 54, 0.45);
 
   color-scheme: dark;
+}
+
+@theme {
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: Raleway, ui-sans-serif, system-ui, sans-serif;
+
+  --text-display: clamp(2.35rem, 5vw + 1rem, 4.5rem);
+  --text-h2: clamp(1.65rem, 2.5vw + 0.75rem, 2.75rem);
+  --text-h3: clamp(1.2rem, 1.2vw + 0.85rem, 1.65rem);
+  --text-body: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+  --text-small: clamp(0.875rem, 0.15vw + 0.82rem, 0.9375rem);
 }
 
 @layer base {
@@ -62,16 +89,25 @@ html.dark {
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 96px; /* sticky navbar offset */
+    scroll-padding-top: 96px;
   }
 
   body {
     @apply bg-[rgb(var(--bg))] text-[rgb(var(--fg))] antialiased;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-      "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.65;
   }
 
-  /* Smooth theme transition */
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
   .theme-transition,
   .theme-transition * {
     transition-property: background-color, color, border-color, box-shadow, fill,
@@ -86,9 +122,99 @@ html.dark {
   }
 }
 
+@layer components {
+  .section-shell {
+    @apply scroll-mt-28 py-10 md:py-14;
+  }
+
+  /* Slightly tighter gap when sections stack (without looking attached) */
+  .section-shell + .section-shell {
+    @apply pt-6 md:pt-8;
+  }
+
+  .section-inner {
+    @apply rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--card))] p-6 shadow-(--shadow-soft) md:p-10;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.24em] text-[rgb(var(--muted-fg))] uppercase;
+  }
+
+  .glass-card {
+    @apply rounded-3xl border border-[rgb(var(--border))]/80 bg-[rgb(var(--card))]/75 backdrop-blur-xl;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .glass-card-hover {
+    @apply transition-[transform,box-shadow,border-color] duration-300 ease-out;
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgb(var(--final-300) / 0.35);
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 w-full items-center justify-center rounded-full px-7 py-3 text-xs font-semibold tracking-[0.2em] uppercase sm:w-auto;
+    @apply bg-[rgb(var(--accent))] text-[rgb(var(--accent-fg))] shadow-(--shadow-elev);
+    @apply hover:opacity-95 focus-visible:outline-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 w-full items-center justify-center rounded-full px-7 py-3 text-xs font-semibold tracking-[0.2em] uppercase sm:w-auto;
+    @apply border border-[rgb(var(--border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))] shadow-(--shadow-soft);
+    @apply hover:shadow-(--shadow-elev) focus-visible:outline-none;
+  }
+
+  .blob {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+    animation: blobFloat 14s ease-in-out infinite;
+  }
+
+  .blob-delay {
+    animation-delay: -5s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .blob {
+    animation: none;
+  }
+}
+
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(12px, -18px) scale(1.04);
+  }
+  66% {
+    transform: translate(-10px, 10px) scale(0.96);
+  }
+}
+
+@keyframes heroScroll {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(24px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(36px);
+    opacity: 0;
   }
 }
 
@@ -96,7 +222,6 @@ html.dark {
 [data-reveal].reveal {
   opacity: 0;
   transform: translate3d(0, 14px, 0);
-  filter: saturate(0.98);
   transition:
     opacity 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
     transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -128,7 +253,6 @@ html.dark {
   clip-path: inset(0 0 0 0 round 24px);
 }
 
-/* Reduced motion: instant everything */
 html.reduced-motion [data-reveal].reveal {
   opacity: 1 !important;
   transform: none !important;
@@ -144,22 +268,3 @@ html.reduced-motion [data-reveal].reveal {
     clip-path: none !important;
   }
 }
-
-@keyframes heroScroll {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  65% {
-    transform: translateY(24px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(36px);
-    opacity: 0;
-  }
-}
-

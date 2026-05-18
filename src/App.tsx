@@ -1,11 +1,15 @@
-import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
-import { Hero } from './components/sections/Hero'
+import { Navbar } from './components/layout/Navbar'
+import { Contact } from './components/sections/Contact'
+import { FAQ } from './components/sections/FAQ'
 import { Features } from './components/sections/Features'
 import { Gallery } from './components/sections/Gallery'
+import { Hero } from './components/sections/Hero'
 import { Journey } from './components/sections/Journey'
-import { Packages } from './components/sections/Packages'
+import { PlatformFlow } from './components/sections/PlatformFlow'
 import { Services } from './components/sections/Services'
+import { Testimonials } from './components/sections/Testimonials'
+import { TrustedBy } from './components/sections/TrustedBy'
 import { useReveal } from './hooks/useReveal'
 
 function App() {
@@ -15,52 +19,36 @@ function App() {
     <div id="top" className="theme-transition min-h-dvh bg-[rgb(var(--bg))]">
       <Navbar />
 
-      <Hero onPrimaryCtaClickHref="#contact" onSecondaryCtaClickHref="#services" />
+      <Hero onPrimaryCtaClickHref="#contact" onSecondaryCtaClickHref="#platform" />
 
-      <main id="main" className="mx-auto max-w-6xl px-5 pb-24 md:px-8">
+      <TrustedBy />
+
+      <main id="main" className="mx-auto max-w-6xl px-5 pb-8 md:px-8">
         <section
           data-reveal="fade-up"
           data-reveal-stagger
-          className="-mt-10 grid gap-3 rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--card))] p-6 shadow-(--shadow-soft) md:-mt-14 md:grid-cols-3 md:p-8"
+          className="glass-card -mt-8 grid gap-4 p-6 md:-mt-12 md:grid-cols-3 md:gap-6 md:p-8"
         >
           {[
-            ['Weddings', 'Editorial romance, logistical clarity'],
-            ['Corporate', 'Conferences, launches, retreats'],
-            ['Social', 'Birthdays, shows, private celebrations'],
+            ['Weddings', 'Editorial romance, seamless timelines, calm coordination'],
+            ['Corporate', 'Conferences, launches, retreats with brand clarity'],
+            ['Social', 'Birthdays, pageants, shows, and private celebrations'],
           ].map(([k, v]) => (
-            <div key={k} data-reveal-item>
-              <div className="text-xs font-semibold tracking-[0.22em] text-[rgb(var(--fg))] uppercase">
-                {k}
-              </div>
-              <div className="mt-2 text-sm leading-relaxed text-[rgb(var(--muted-fg))]">
-                {v}
-              </div>
-            </div>
+            <article key={k} data-reveal-item className="rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--bg))] p-5">
+              <h3 className="font-display text-lg">{k}</h3>
+              <p className="mt-2 text-[length:var(--text-small)] leading-relaxed text-[rgb(var(--muted-fg))]">{v}</p>
+            </article>
           ))}
         </section>
 
         <Services />
-
         <Features />
-
+        <PlatformFlow />
         <Journey />
-
         <Gallery />
-
-        <Packages />
-
-        <section
-          id="contact"
-          data-reveal="fade-up"
-          className="mt-10 scroll-mt-28 rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--card))] p-8 shadow-(--shadow-soft) md:mt-12 md:p-10"
-        >
-          <p className="text-xs font-semibold tracking-[0.24em] text-[rgb(var(--muted-fg))] uppercase">
-            Contact
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-[-0.01em] md:text-3xl">
-            Tell us what you’re planning.
-          </h2>
-        </section>
+        <Testimonials />
+        <Contact />
+        <FAQ />
       </main>
 
       <Footer />
