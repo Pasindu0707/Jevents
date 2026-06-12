@@ -9,12 +9,11 @@ import { OptimizedImage } from '../ui/OptimizedImage'
 
 type Props = {
   onPrimaryCtaClickHref?: string
-  onSecondaryCtaClickHref?: string
 }
 
 export function Hero({
   onPrimaryCtaClickHref = '#contact',
-  onSecondaryCtaClickHref = '#platform',
+  // onSecondaryCtaClickHref = '#platform',
 }: Props) {
   const reduced = usePrefersReducedMotion()
   const rootRef = useRef<HTMLElement | null>(null)
