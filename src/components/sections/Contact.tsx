@@ -15,11 +15,13 @@ export function Contact() {
         <div className="section-inner">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <SectionHeader
-                eyebrow="Contact"
-                title="Tell us what you're planning"
-                description="Share your date, guest count, and vision we'll reply within one business day with a tailored path forward."
-              />
+            <div className="flex flex-col gap-4 [&>*]:!flex-col [&>*]:!items-start">
+  <SectionHeader
+    eyebrow="Contact"
+    title="Tell us what you're planning"
+    description="Share your date, guest count, and vision. We'll reply within one business day with a tailored path forward."
+  />
+</div>
               <ul className="mt-8 space-y-4 text-[length:var(--text-small)] text-[rgb(var(--muted-fg))]">
                 <li className="flex gap-3">
                   <Mail size={18} className="mt-0.5 shrink-0 text-[rgb(var(--final-200))]" aria-hidden />

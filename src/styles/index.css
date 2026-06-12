@@ -134,6 +134,9 @@ html.dark {
 
   .section-inner {
     @apply rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--card))] p-6 shadow-(--shadow-soft) md:p-10;
+    background-image:
+      radial-gradient(ellipse at 88% 8%, rgb(var(--main-300) / 0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 12% 92%, rgb(var(--final-300) / 0.04) 0%, transparent 48%);
   }
 
   .eyebrow {
@@ -141,8 +144,9 @@ html.dark {
   }
 
   .glass-card {
-    @apply rounded-3xl border border-[rgb(var(--border))]/80 bg-[rgb(var(--card))]/75 backdrop-blur-xl;
+    @apply rounded-3xl border border-[rgb(var(--border))]/80 bg-[rgb(var(--card))]/80 backdrop-blur-xl;
     box-shadow: var(--shadow-soft);
+    background-image: radial-gradient(ellipse at 0% 0%, rgb(var(--main-300) / 0.055) 0%, transparent 60%);
   }
 
   .glass-card-hover {

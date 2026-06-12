@@ -54,18 +54,23 @@ export function Testimonials() {
                   <OptimizedImage
                     src={t.image}
                     alt=""
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(var(--secondary-100)/0.75),transparent_60%)]" aria-hidden />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgb(var(--secondary-100)/0.8),transparent_55%)]" aria-hidden />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <Quote size={20} className="text-[rgb(var(--final-200))]" aria-hidden />
-                  <blockquote className="mt-4 flex-1 text-[length:var(--text-small)] leading-relaxed text-[rgb(var(--muted-fg))]">
-                    “{t.quote}”
+                  <div className="flex items-center gap-3">
+                    <Quote size={18} className="shrink-0 text-[rgb(var(--final-200))]" aria-hidden />
+                    <span className="h-px flex-1 bg-[rgb(var(--border))]" aria-hidden />
+                  </div>
+                  <blockquote className="mt-4 flex-1 text-small leading-relaxed text-[rgb(var(--muted-fg))]">
+                    "{t.quote}"
                   </blockquote>
                   <footer className="mt-6 border-t border-[rgb(var(--border))] pt-4">
-                    <p className="font-display text-lg">{t.name}</p>
-                    <p className="mt-1 text-xs text-[rgb(var(--muted-fg))]">{t.role}</p>
+                    <p className="font-display text-lg leading-snug">{t.name}</p>
+                    <p className="mt-1 text-[10px] font-semibold tracking-[0.22em] text-[rgb(var(--final-200))] uppercase">
+                      {t.role}
+                    </p>
                   </footer>
                 </div>
               </article>

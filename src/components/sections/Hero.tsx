@@ -157,12 +157,12 @@ export function Hero({
           <a href={onPrimaryCtaClickHref} className="btn-primary">
             Get Started
           </a>
-          <a
+          {/* <a
             href={onSecondaryCtaClickHref}
             className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-[rgb(var(--main-300)/0.35)] bg-[rgb(var(--white)/0.12)] px-7 py-3 text-xs font-semibold tracking-[0.2em] text-[rgb(var(--white))] uppercase backdrop-blur-md hover:bg-[rgb(var(--white)/0.18)] sm:w-auto"
           >
             View Demo
-          </a>
+          </a> */}
         </motion.div>
       </div>
 

@@ -7,7 +7,7 @@ import { OptimizedImage } from '../ui/OptimizedImage'
 const quickLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Journey', href: '#journey' },
+  // { label: 'Journey', href: '#journey' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
   { label: 'FAQ', href: '#faq' },
@@ -26,7 +26,7 @@ const socials = [
   { label: 'Facebook', href: SOCIAL.facebook, Icon: FacebookIcon },
   { label: 'Instagram', href: SOCIAL.instagram, Icon: InstagramIcon },
   { label: 'TikTok', href: SOCIAL.tiktok, Icon: TikTokIcon },
-  { label: 'WhatsApp Business', href: CONTACT.whatsappUrl, Icon: MessageCircle },
+  { label: 'WhatsApp', href: CONTACT.whatsappUrl, Icon: MessageCircle },
 ] as const
 
 const externalLinkProps = {
@@ -48,9 +48,9 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-4">
             <OptimizedImage
-              src={LOGOS.transparent}
+              src={LOGOS.full}
               alt="J Events"
-              className="h-12 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[rgb(var(--beige))/0.84]">
               A modern event management studio with an editorial eye planning weddings,

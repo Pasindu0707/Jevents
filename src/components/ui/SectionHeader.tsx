@@ -21,15 +21,20 @@ export function SectionHeader({
       ].join(' ')}
     >
       <div className={centered ? 'max-w-3xl' : ''}>
-        <p className="eyebrow">{eyebrow}</p>
-        <h2 className="mt-3 font-display text-[length:var(--text-h2)] leading-tight tracking-[-0.02em]">
+        <div className={['flex items-center gap-3', centered ? 'justify-center' : ''].join(' ')}>
+          <span className="h-px w-8 bg-[rgb(var(--final-200)/0.55)]" aria-hidden />
+          <p className="text-[10px] font-semibold tracking-[0.3em] text-[rgb(var(--final-200))] uppercase">
+            {eyebrow}
+          </p>
+        </div>
+        <h2 className="mt-3 font-display text-h2 leading-tight tracking-[-0.02em]">
           {title}
         </h2>
       </div>
       {description ? (
         <p
           className={[
-            'max-w-xl text-[length:var(--text-small)] leading-relaxed text-[rgb(var(--muted-fg))]',
+            'max-w-xl text-small leading-relaxed text-[rgb(var(--muted-fg))]',
             centered ? 'mx-auto' : '',
           ].join(' ')}
         >

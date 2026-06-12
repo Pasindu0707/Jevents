@@ -9,19 +9,19 @@ const FAQS = [
   },
   {
     q: 'Can I track guests and RSVPs digitally?',
-    a: 'Yes. Our platform supports RSVP flows, dietary preferences, seating, and QR check in so you always know who is arriving and when.',
+    a: 'Our dedicated team personally calls your guests to confirm attendance, manage dietary needs, and handle seating',
   },
   {
     q: 'How far in advance should we book?',
-    a: 'For weddings we recommend 8–12 months. Corporate and social events often need 6–10 weeks depending on scale and venue availability.',
+    a: 'Generally, we recommend 6–8 months for weddings and 6–10 weeks for corporate and social events. But beyond that, we can also handle tighter timelines and last-minute events so don\'t worry if you\'re on a short schedule!'
   },
   {
     q: 'What is included in your packages?',
     a: 'Packages range from planning roadmaps to full design and on-day coordination. Every quote is tailored after a discovery call.',
   },
   {
-    q: 'Do you work outside Wennappuwa?',
-    a: 'Absolutely. We coordinate events across Sri Lanka and can align remote vendors and travel logistics as needed.',
+    q: 'What areas or regions in Sri Lanka do you cover?',
+    a: 'We coordinate events across Sri Lanka and can align remote vendors and travel logistics as needed.',
   },
 ] as const
 
@@ -30,7 +30,14 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   const panelId = useId()
 
   return (
-    <div className="rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--bg))]">
+    <div
+      className={[
+        'overflow-hidden rounded-2xl border bg-[rgb(var(--bg))] transition-[border-color,box-shadow] duration-300',
+        open
+          ? 'border-[rgb(var(--final-300)/0.45)] shadow-(--shadow-soft)'
+          : 'border-[rgb(var(--border))] hover:border-[rgb(var(--final-300)/0.3)]',
+      ].join(' ')}
+    >
       <button
         type="button"
         className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
@@ -52,7 +59,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         id={panelId}
         role="region"
         hidden={!open}
-        className="border-t border-[rgb(var(--border))] px-5 pb-4 text-[length:var(--text-small)] leading-relaxed text-[rgb(var(--muted-fg))]"
+        className="border-t border-[rgb(var(--border))] px-5 pb-5 pt-4 text-small leading-relaxed text-[rgb(var(--muted-fg))]"
       >
         {a}
       </div>
@@ -65,11 +72,13 @@ export function FAQ() {
     <section id="faq" aria-label="Frequently asked questions" className="section-shell scroll-mt-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div data-reveal="fade-up" className="section-inner">
+        <div className="flex flex-col gap-4 [&>*]:!flex-col [&>*]:!items-start">
           <SectionHeader
             eyebrow="FAQ"
             title="Questions hosts ask us"
-            description="Clear answers before you book—so you can plan with confidence."
+            description="Clear answers before you book so you can plan with confidence."
           />
+          </div>
           <div className="mt-8 grid gap-3">
             {FAQS.map((item) => (
               <FaqItem key={item.q} q={item.q} a={item.a} />

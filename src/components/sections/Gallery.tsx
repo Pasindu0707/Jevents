@@ -32,13 +32,13 @@ export function Gallery() {
               <OptimizedImage
                 src={item.src}
                 alt={`${item.event} photography by J Events`}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 flex items-end justify-between bg-[linear-gradient(to_top,rgba(71,79,68,0.75),transparent_55%)] p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <span className="text-[10px] font-semibold tracking-[0.26em] text-[rgb(var(--main-300))] uppercase">
+              <div className="absolute inset-0 flex items-end justify-between bg-[linear-gradient(to_top,rgba(71,79,68,0.72),transparent_50%)] p-5">
+                <span className="text-[10px] font-semibold tracking-[0.26em] text-[rgb(var(--main-300))] uppercase opacity-90">
                   {item.event}
                 </span>
-                <span className="h-px w-14 origin-left scale-x-0 bg-[rgb(var(--accent))] transition-transform group-hover:scale-x-100" />
+                <span className="h-px w-10 origin-right scale-x-0 bg-[rgb(var(--final-300))] transition-transform duration-500 group-hover:scale-x-100" />
               </div>
             </div>
           </article>
