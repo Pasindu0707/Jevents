@@ -1,0 +1,49 @@
+{
+  "slug": "amara-nuwan",
+  "published": false,
+  "template": "luxury-gold",
+
+  "brideName": "Amara",
+  "groomName": "Nuwan",
+  "weddingDate": "2027-02-14T17:00:00+05:30",
+  "hashtag": "#AmaraNuwan2027",
+  "language": "en",
+
+  "primaryColor": "#ba7b46",
+  "secondaryColor": "#506144",
+  "fontPreset": "modern-sans",
+
+  "heroImage": "/assets/photos/wedding-02.jpg",
+  "coverVideo": "",
+  "backgroundImage": "/assets/photos/wedding-04.jpg",
+  "backgroundMusic": "",
+
+  "welcomeMessage": "A draft invitation — not yet published.",
+  "loveStory": "",
+
+  "gallery": [
+    { "src": "/assets/photos/wedding-03.jpg", "alt": "Couple" }
+  ],
+
+  "events": [
+    {
+      "title": "Wedding Ceremony",
+      "date": "2027-02-14",
+      "time": "5:00 PM",
+      "venueName": "Kandy City Hotel",
+      "venueAddress": "Kandy",
+      "description": "Ceremony and reception."
+    }
+  ],
+
+  "rsvp": {
+    "enabled": false,
+    "googleScriptUrl": "",
+    "successMessage": "Thank you! Your RSVP has been received.",
+    "disabledMessage": "RSVPs for this celebration are not open yet. Please check back soon.",
+    "allowPlusOnes": false
+  },
+
+  "createdAt": "2026-06-16T00:00:00+05:30",
+  "updatedAt": "2026-06-16T00:00:00+05:30"
+}

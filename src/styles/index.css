@@ -97,6 +97,9 @@ html.dark {
     font-family: var(--font-body);
     font-size: var(--text-body);
     line-height: 1.65;
+    /* Belt-and-braces guard against accidental horizontal scroll on mobile.
+       `clip` (not `hidden`) so it doesn't break position: sticky descendants. */
+    overflow-x: clip;
   }
 
   h1,

@@ -22,9 +22,13 @@ export function useReveal(options: Options = {}) {
   const rootMargin = options.rootMargin ?? '0px 0px -10% 0px'
   const threshold = options.threshold ?? 0.12
   const staggerMs = options.staggerMs ?? 90
+  // Stable string key so an array `threshold` doesn't re-run the effect every
+  // render; reconstructed back into numbers inside the effect.
   const thresholdKey = Array.isArray(threshold) ? threshold.join(',') : String(threshold)
 
   useEffect(() => {
+    const thresholds = thresholdKey.split(',').map(Number)
+    const observerThreshold = thresholds.length === 1 ? thresholds[0] : thresholds
     const targets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
 
     // Reduced motion: make everything instant.
@@ -64,7 +68,7 @@ export function useReveal(options: Options = {}) {
           io.unobserve(el)
         }
       },
-      { rootMargin, threshold },
+      { rootMargin, threshold: observerThreshold },
     )
 
     for (const el of targets) io.observe(el)

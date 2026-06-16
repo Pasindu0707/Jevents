@@ -1,0 +1,73 @@
+{
+  "slug": "dewmini-janni",
+  "published": true,
+  "template": "classic-floral",
+
+  "brideName": "Dewmini",
+  "groomName": "Janindu",
+  "weddingDate": "2026-12-20T16:00:00+05:30",
+  "hashtag": "#DewminiAndJanni",
+  "language": "en",
+
+  "primaryColor": "#637953",
+  "secondaryColor": "#e69a44",
+  "fontPreset": "classic-serif",
+
+  "heroImage": "/assets/photos/hero.jpg",
+  "coverVideo": "",
+  "backgroundImage": "/assets/photos/wedding-02.jpg",
+  "backgroundMusic": "",
+
+  "welcomeMessage": "With hearts full of love and joy, we invite you to celebrate the beginning of our forever.",
+  "loveStory": "We first met in Colombo in the winter of 2021. What began as a chance conversation over coffee grew into a love we never want to end. On the 20th of December, surrounded by the people we love most, we say 'I do'.",
+
+  "gallery": [
+    { "src": "/assets/photos/wedding-01.jpg", "alt": "Engagement", "caption": "The proposal" },
+    { "src": "/assets/photos/wedding-03.jpg", "alt": "Pre-shoot" },
+    { "src": "/assets/photos/wedding-04.jpg", "alt": "Together" },
+    { "src": "/assets/photos/wedding-05.jpg", "alt": "Family" }
+  ],
+
+  "events": [
+    {
+      "title": "Poruwa Ceremony",
+      "date": "2026-12-20",
+      "time": "4:00 PM",
+      "venueName": "Galle Face Hotel",
+      "venueAddress": "2 Galle Rd, Colombo 03",
+      "mapUrl": "https://maps.google.com/?q=Galle+Face+Hotel+Colombo",
+      "description": "Traditional Poruwa ceremony in the Main Hall.",
+      "icon": "heart"
+    },
+    {
+      "title": "Reception & Dinner",
+      "date": "2026-12-20",
+      "time": "7:30 PM",
+      "venueName": "Galle Face Hotel",
+      "venueAddress": "Grand Ballroom, 2 Galle Rd, Colombo 03",
+      "mapUrl": "https://maps.google.com/?q=Galle+Face+Hotel+Colombo",
+      "description": "Dinner, dancing and celebration.",
+      "icon": "utensils"
+    }
+  ],
+
+  "rsvp": {
+    "enabled": true,
+    "deadline": "2026-12-01T23:59:00+05:30",
+    "googleScriptUrl": "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec",
+    "successMessage": "Thank you! Your RSVP has been received — we can't wait to celebrate with you.",
+    "disabledMessage": "",
+    "message": "We would be honoured to have you with us. Kindly RSVP before December 1st.",
+    "allowPlusOnes": true,
+    "maxGuests": 4
+  },
+
+  "share": {
+    "title": "Dewmini & Janindu — 20.12.2026",
+    "description": "You are invited to celebrate our wedding in Colombo.",
+    "image": "/assets/photos/hero.jpg"
+  },
+
+  "createdAt": "2026-06-16T00:00:00+05:30",
+  "updatedAt": "2026-06-16T00:00:00+05:30"
+}

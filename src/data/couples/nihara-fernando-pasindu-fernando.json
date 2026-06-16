@@ -1,0 +1,36 @@
+{
+  "slug": "nihara-fernando-pasindu-fernando",
+  "published": false,
+  "template": "luxury-gold",
+  "brideName": "Nihara Fernando",
+  "groomName": "Pasindu Fernando",
+  "weddingDate": "2027-01-16T09:30:00",
+  "hashtag": "",
+  "language": "en",
+  "primaryColor": "#637953",
+  "secondaryColor": "#b07d3f",
+  "fontPreset": "classic-serif",
+  "heroImage": "",
+  "coverVideo": "",
+  "backgroundImage": "",
+  "backgroundMusic": "",
+  "welcomeMessage": "",
+  "loveStory": "",
+  "gallery": [],
+  "events": [],
+  "rsvp": {
+    "enabled": true,
+    "deadline": "",
+    "googleScriptUrl": "",
+    "successMessage": "Thank you! Your RSVP has been received.",
+    "disabledMessage": "",
+    "message": ""
+  },
+  "share": {
+    "title": "",
+    "description": "",
+    "image": ""
+  },
+  "createdAt": "2026-06-16T16:24:22.207Z",
+  "updatedAt": "2026-06-16T16:24:22.207Z"
+}
