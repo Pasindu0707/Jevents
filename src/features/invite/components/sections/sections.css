@@ -431,7 +431,10 @@
 /* ============================ GALLERY ============================ */
 .gallery__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* auto-FIT (not auto-fill) so a small number of photos (2–5) stretch to fill
+     the row instead of leaving empty tracks; wraps cleanly when there are more. */
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  justify-content: center;
   gap: 1rem;
   margin: 3rem auto 0;
 }
@@ -580,6 +583,10 @@ textarea.form__input {
   font-style: italic;
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   color: var(--gold-bright);
+}
+
+.form-success .btn {
+  margin-top: 1.6rem;
 }
 
 /* ============================ INQUIRY ============================ */

@@ -19,6 +19,31 @@
   color: var(--cream-dim);
 }
 
+/* Toolbar actions group */
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-back {
+  font-family: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.admin-back:hover {
+  background: #f1f1f1;
+}
+
 /* Toolbar export button */
 .admin-export {
   font-family: inherit;

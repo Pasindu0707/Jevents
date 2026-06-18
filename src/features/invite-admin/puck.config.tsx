@@ -70,45 +70,45 @@ type AnyFieldProps = { value: any; onChange: (value: any) => void }
  * ------------------------------------------------------------------ */
 const sectionStyleField = {
   type: 'object' as const,
-  label: 'Section Style (fonts · background · particles)',
+  label: '🎨 Fonts, Colours & Effects (optional)',
   objectFields: {
-    headingFont: { type: 'select' as const, label: 'Heading Font', options: SECTION_FONT_OPTIONS },
-    bodyFont: { type: 'select' as const, label: 'Body Font', options: SECTION_FONT_OPTIONS },
+    headingFont: { type: 'select' as const, label: 'Text · Heading font', options: SECTION_FONT_OPTIONS },
+    bodyFont: { type: 'select' as const, label: 'Text · Body font', options: SECTION_FONT_OPTIONS },
     headingFontSize: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <RangeField label="Heading Font Size" value={value} onChange={onChange} min={18} max={80} suffix="px" defaultValue={40} />
+        <RangeField label="Text · Heading size" value={value} onChange={onChange} min={18} max={80} suffix="px" defaultValue={40} />
       ),
     },
     bodyFontSize: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <RangeField label="Body Font Size" value={value} onChange={onChange} min={12} max={30} suffix="px" defaultValue={18} />
+        <RangeField label="Text · Body size" value={value} onChange={onChange} min={12} max={30} suffix="px" defaultValue={18} />
       ),
     },
     headingColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Heading Color" value={value} onChange={onChange} defaultValue="#f4ece0" />
+        <ColorField label="Text · Heading colour" value={value} onChange={onChange} defaultValue="#f4ece0" />
       ),
     },
     bodyColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Body Text Color" value={value} onChange={onChange} defaultValue="#cabfae" />
+        <ColorField label="Text · Body colour" value={value} onChange={onChange} defaultValue="#cabfae" />
       ),
     },
     accentColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Accent / Highlight Text Color" value={value} onChange={onChange} defaultValue="#c9a45c" />
+        <ColorField label="Text · Highlight colour" value={value} onChange={onChange} defaultValue="#c9a45c" />
       ),
     },
     backgroundType: {
       type: 'radio' as const,
-      label: 'Background Type',
+      label: 'Background · Type',
       options: [
-        { label: 'Color', value: 'color' },
+        { label: 'Colour', value: 'color' },
         { label: 'Image', value: 'image' },
         { label: 'Video', value: 'video' },
       ],
@@ -116,31 +116,31 @@ const sectionStyleField = {
     backgroundColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Background Color" value={value} onChange={onChange} defaultValue="#14110f" />
+        <ColorField label="Background · Colour" value={value} onChange={onChange} defaultValue="#14110f" />
       ),
     },
     backgroundImage: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ImageUploadField label="Background Image" value={value} onChange={onChange} />
+        <ImageUploadField label="Background · Image" value={value} onChange={onChange} />
       ),
     },
-    backgroundVideo: { type: 'text' as const, label: 'Background Video URL' },
+    backgroundVideo: { type: 'text' as const, label: 'Background · Video link' },
     overlayColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Background Overlay Color" value={value} onChange={onChange} defaultValue="#000000" />
+        <ColorField label="Background · Tint colour" value={value} onChange={onChange} defaultValue="#000000" />
       ),
     },
     overlayOpacity: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <RangeField label="Overlay Opacity" value={value} onChange={onChange} min={0} max={0.9} step={0.05} defaultValue={0} />
+        <RangeField label="Background · Darkening" value={value} onChange={onChange} min={0} max={0.9} step={0.05} defaultValue={0} />
       ),
     },
     particlesEnabled: {
       type: 'radio' as const,
-      label: 'Particles',
+      label: 'Effect · Floating particles',
       options: [
         { label: 'On', value: true },
         { label: 'Off', value: false },
@@ -148,31 +148,31 @@ const sectionStyleField = {
     },
     particleStyle: {
       type: 'select' as const,
-      label: 'Particle Style',
+      label: 'Effect · Style',
       options: [
-        { label: 'Bokeh Dots', value: 'bokeh' },
-        { label: 'Floating Petals', value: 'petals' },
+        { label: 'Bokeh dots', value: 'bokeh' },
+        { label: 'Floating petals', value: 'petals' },
         { label: 'Sparkles', value: 'sparkles' },
         { label: 'Snow', value: 'snow' },
-        { label: 'Gold Dust', value: 'golddust' },
+        { label: 'Gold dust', value: 'golddust' },
         { label: 'Fireflies', value: 'fireflies' },
       ],
     },
     particleColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Particle Color" value={value} onChange={onChange} defaultValue="#e7c987" />
+        <ColorField label="Effect · Colour" value={value} onChange={onChange} defaultValue="#e7c987" />
       ),
     },
     particleCount: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <RangeField label="Particle Count" value={value} onChange={onChange} min={20} max={200} defaultValue={60} />
+        <RangeField label="Effect · Amount" value={value} onChange={onChange} min={20} max={200} defaultValue={60} />
       ),
     },
     particleSpeed: {
       type: 'select' as const,
-      label: 'Particle Speed',
+      label: 'Effect · Speed',
       options: [
         { label: 'Slow', value: 'slow' },
         { label: 'Medium', value: 'medium' },
@@ -187,35 +187,35 @@ const sectionStyleField = {
  * ------------------------------------------------------------------ */
 const themeField = {
   type: 'object' as const,
-  label: '🎨 Global Theme',
+  label: '🎨 Overall Colours & Style',
   objectFields: {
     primaryColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Primary (Gold / Accent)" value={value} onChange={onChange} defaultValue="#c9a45c" />
+        <ColorField label="Main accent colour (gold)" value={value} onChange={onChange} defaultValue="#c9a45c" />
       ),
     },
     secondaryColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Secondary (Dark / Text)" value={value} onChange={onChange} defaultValue="#2c2418" />
+        <ColorField label="Dark / text colour" value={value} onChange={onChange} defaultValue="#2c2418" />
       ),
     },
     backgroundColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Background Color" value={value} onChange={onChange} defaultValue="#14110f" />
+        <ColorField label="Page background colour" value={value} onChange={onChange} defaultValue="#14110f" />
       ),
     },
     lineColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Decorative Line Color" value={value} onChange={onChange} defaultValue="#c9a45c" />
+        <ColorField label="Decorative line colour" value={value} onChange={onChange} defaultValue="#c9a45c" />
       ),
     },
     lineStyle: {
       type: 'select' as const,
-      label: 'Decorative Line Style',
+      label: 'Decorative line style',
       options: [
         { label: 'Solid', value: 'solid' },
         { label: 'Dashed', value: 'dashed' },
@@ -225,21 +225,21 @@ const themeField = {
     lineThickness: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <RangeField label="Decorative Line Thickness" value={value} onChange={onChange} min={1} max={4} suffix="px" defaultValue={1} />
+        <RangeField label="Decorative line thickness" value={value} onChange={onChange} min={1} max={4} suffix="px" defaultValue={1} />
       ),
     },
     accentTextColor: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (
-        <ColorField label="Accent Text Color" value={value} onChange={onChange} defaultValue="#e7c987" />
+        <ColorField label="Highlighted-word colour" value={value} onChange={onChange} defaultValue="#e7c987" />
       ),
     },
     dividerStyle: {
       type: 'select' as const,
-      label: 'Section Divider Style',
+      label: 'Divider between sections',
       options: [
         { label: 'Line', value: 'line' },
-        { label: 'Floral Ornament', value: 'floral' },
+        { label: 'Floral ornament', value: 'floral' },
         { label: 'None', value: 'none' },
       ],
     },
@@ -269,16 +269,101 @@ const TYPE_BY_COMPONENT: Record<string, SectionType> = Object.fromEntries(
   Object.entries(COMPONENT_BY_TYPE).map(([type, comp]) => [comp, type as SectionType]),
 ) as Record<string, SectionType>
 
+/* ------------------------------------------------------------------ *
+ * Collapsible field groups (non-technical-friendly editor panel).
+ *
+ * Each section's scalar fields are wrapped in collapsible "object" groups in
+ * the Puck sidebar. To keep the exported JSON FLAT (the shape the live page
+ * reads), we `nestForEditor` when loading a couple into Puck and `flatten`
+ * again on render + export. SECTION_GROUPS is the single source of truth for
+ * which fields live in which group. (Arrays like paragraphs/events and the
+ * `style` group stay top-level.)
+ * ------------------------------------------------------------------ */
+type FieldGroup = { key: string; label: string; fields: string[] }
+
+const SECTION_GROUPS: Partial<Record<SectionType, FieldGroup[]>> = {
+  entrance: [
+    {
+      key: 'gNames',
+      label: '👤 Names & text',
+      fields: ['bride', 'groom', 'invitedText', 'brideFont', 'groomFont', 'brideFontSize', 'groomFontSize', 'brideColor', 'groomColor'],
+    },
+    { key: 'gBackground', label: '🖼 Background', fields: ['backgroundType', 'backgroundImage', 'backgroundVideo', 'overlayOpacity'] },
+    { key: 'gDecoration', label: '🌿 Decoration', fields: ['topFloral', 'topFloralRotation', 'bottomFloral', 'bottomFloralRotation'] },
+    { key: 'gCard', label: '🪟 Card', fields: ['cardColor', 'cardOpacity'] },
+    { key: 'gButton', label: '🔘 Button', fields: ['buttonText', 'buttonTextColor', 'buttonBgColor'] },
+    { key: 'gEffects', label: '✨ Effects', fields: ['particles'] },
+  ],
+  hero: [
+    { key: 'gContent', label: '📝 Names & date', fields: ['bride', 'groom', 'date', 'tagline'] },
+    { key: 'gPhoto', label: '🖼 Photo', fields: ['image'] },
+    { key: 'gQuote', label: '❝ Quote (optional)', fields: ['verse', 'verseRef'] },
+  ],
+  countdown: [{ key: 'gContent', label: '📝 Details', fields: ['heading', 'targetDate'] }],
+  couple: [
+    { key: 'gBride', label: '👰 Bride', fields: ['bride', 'brideBio', 'brideImage'] },
+    { key: 'gGroom', label: '🤵 Groom', fields: ['groom', 'groomBio', 'groomImage'] },
+    { key: 'gQuote', label: '❝ Quote (optional)', fields: ['verse', 'verseRef'] },
+  ],
+  story: [{ key: 'gContent', label: '📝 Details', fields: ['heading', 'sideImage'] }],
+  events: [{ key: 'gContent', label: '📝 Details', fields: ['heading'] }],
+  timeline: [{ key: 'gContent', label: '📝 Details', fields: ['heading'] }],
+  gallery: [{ key: 'gContent', label: '📝 Details', fields: ['heading'] }],
+  rsvp: [{ key: 'gContent', label: '📝 Details', fields: ['heading', 'message', 'rsvpSheetUrl'] }],
+  inquiry: [{ key: 'gContent', label: '📝 Details', fields: ['heading', 'message', 'inquirySheetUrl'] }],
+  footer: [{ key: 'gNames', label: '📝 Details', fields: ['bride', 'groom', 'date', 'hashtag'] }],
+}
+
+/** Wrap a set of field definitions in a collapsible group (Puck object field). */
+function grp(label: string, objectFields: Record<string, unknown>) {
+  return { type: 'object' as const, label, objectFields }
+}
+
+/** Flat couple-data props → grouped Puck props (so the grouped fields show values). */
+function nestForEditor(type: SectionType, flat: Record<string, any>): Record<string, any> {
+  const groups = SECTION_GROUPS[type]
+  if (!groups) return flat
+  const out: Record<string, any> = { ...flat }
+  for (const g of groups) {
+    const obj: Record<string, any> = {}
+    for (const f of g.fields) {
+      if (f in flat) {
+        obj[f] = flat[f]
+        delete out[f]
+      }
+    }
+    out[g.key] = obj
+  }
+  return out
+}
+
+/** Grouped Puck props → flat props (for the live component + export). Group
+ *  values always win over any stale top-level defaults. */
+function flatten(type: SectionType, grouped: Record<string, any>): Record<string, any> {
+  const groups = SECTION_GROUPS[type]
+  if (!groups) return grouped
+  const groupKeys = groups.map((g) => g.key)
+  const out: Record<string, any> = {}
+  for (const k of Object.keys(grouped)) {
+    if (!groupKeys.includes(k)) out[k] = grouped[k]
+  }
+  for (const g of groups) {
+    const v = grouped[g.key]
+    if (v && typeof v === 'object') Object.assign(out, v)
+  }
+  return out
+}
+
 /* ============================ Puck config ============================ */
 
 export const config: Config = {
   root: {
     fields: {
+      slug: { type: 'text', label: 'Page link / address (e.g. dewmini-janni → /dewmini-janni)' },
+      title: { type: 'text', label: 'Browser tab title' },
+      couple: { type: 'text', label: 'Couple names (used when sharing the link)' },
+      musicUrl: { type: 'text', label: 'Background music — paste an MP3 link (optional)' },
       theme: themeField,
-      slug: { type: 'text', label: 'URL Slug (e.g. dewmini-janni)' },
-      title: { type: 'text', label: 'Page Title (browser tab)' },
-      couple: { type: 'text', label: 'Couple (meta)' },
-      musicUrl: { type: 'text', label: 'Background Music URL (whole site)' },
     },
     defaultProps: { slug: 'new-couple', title: 'Our Wedding', couple: '', musicUrl: '', theme: {} },
     // The .admin-preview wrapper lets editor CSS force scroll-reveal elements
@@ -294,163 +379,127 @@ export const config: Config = {
 
   components: {
     Entrance: {
-      label: 'Entrance / Splash',
+      label: '✨ Entrance (opening screen)',
       fields: {
-        bride: { type: 'text', label: 'Bride Name' },
-        groom: { type: 'text', label: 'Groom Name' },
-        invitedText: { type: 'text', label: '"Invited" Text' },
-        brideFont: { type: 'select', label: 'Bride Name Font', options: FONT_OPTIONS },
-        groomFont: { type: 'select', label: 'Groom Name Font', options: FONT_OPTIONS },
-        brideFontSize: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <RangeField
-              label="Bride Font Size"
-              value={value}
-              onChange={onChange}
-              min={40}
-              max={120}
-              suffix="px"
-              defaultValue={84}
-            />
-          ),
-        },
-        groomFontSize: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <RangeField
-              label="Groom Font Size"
-              value={value}
-              onChange={onChange}
-              min={40}
-              max={120}
-              suffix="px"
-              defaultValue={84}
-            />
-          ),
-        },
-        brideColor: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ColorField label="Bride Name Color" value={value} onChange={onChange} defaultValue="#2c2418" />
-          ),
-        },
-        groomColor: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ColorField label="Groom Name Color" value={value} onChange={onChange} defaultValue="#2c2418" />
-          ),
-        },
-        topFloral: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Top Floral Decoration" value={value} onChange={onChange} />
-          ),
-        },
-        bottomFloral: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Bottom Floral Decoration" value={value} onChange={onChange} />
-          ),
-        },
-        topFloralRotation: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <RangeField
-              label="Top Floral Rotation"
-              value={value}
-              onChange={onChange}
-              min={-180}
-              max={180}
-              suffix="°"
-              defaultValue={0}
-            />
-          ),
-        },
-        bottomFloralRotation: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <RangeField
-              label="Bottom Floral Rotation"
-              value={value}
-              onChange={onChange}
-              min={-180}
-              max={180}
-              suffix="°"
-              defaultValue={180}
-            />
-          ),
-        },
-        backgroundType: {
-          type: 'radio',
-          label: 'Background Type',
-          options: [
-            { label: 'Image', value: 'image' },
-            { label: 'Video', value: 'video' },
-          ],
-        },
-        backgroundImage: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Background Image" value={value} onChange={onChange} />
-          ),
-        },
-        backgroundVideo: { type: 'text', label: 'Background Video URL' },
-        overlayOpacity: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <RangeField
-              label="Background Overlay Opacity"
-              value={value}
-              onChange={onChange}
-              min={0}
-              max={0.8}
-              step={0.05}
-              defaultValue={0.35}
-            />
-          ),
-        },
-        cardColor: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ColorField label="Card Background Color" value={value} onChange={onChange} defaultValue="#ffffff" />
-          ),
-        },
-        cardOpacity: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <RangeField
-              label="Card Opacity"
-              value={value}
-              onChange={onChange}
-              min={0.5}
-              max={1}
-              step={0.05}
-              defaultValue={0.9}
-            />
-          ),
-        },
-        buttonText: { type: 'text', label: 'Button Text' },
-        buttonTextColor: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ColorField label="Button Text Color" value={value} onChange={onChange} defaultValue="#1c1916" />
-          ),
-        },
-        buttonBgColor: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ColorField label="Button Background Color" value={value} onChange={onChange} defaultValue="#c9a45c" />
-          ),
-        },
-        particles: {
-          type: 'radio',
-          label: 'Bokeh Particles',
-          options: [
-            { label: 'On', value: true },
-            { label: 'Off', value: false },
-          ],
-        },
+        gNames: grp('👤 Names & text', {
+          bride: { type: 'text', label: "Bride's name" },
+          groom: { type: 'text', label: "Groom's name" },
+          invitedText: { type: 'text', label: "Top line (e.g. 'You are invited to the Wedding of')" },
+          brideFont: { type: 'select', label: "Bride's name · font", options: FONT_OPTIONS },
+          groomFont: { type: 'select', label: "Groom's name · font", options: FONT_OPTIONS },
+          brideFontSize: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <RangeField label="Bride's name · size" value={value} onChange={onChange} min={40} max={120} suffix="px" defaultValue={84} />
+            ),
+          },
+          groomFontSize: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <RangeField label="Groom's name · size" value={value} onChange={onChange} min={40} max={120} suffix="px" defaultValue={84} />
+            ),
+          },
+          brideColor: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ColorField label="Bride's name · colour" value={value} onChange={onChange} defaultValue="#2c2418" />
+            ),
+          },
+          groomColor: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ColorField label="Groom's name · colour" value={value} onChange={onChange} defaultValue="#2c2418" />
+            ),
+          },
+        }),
+        gBackground: grp('🖼 Background', {
+          backgroundType: {
+            type: 'radio',
+            label: 'Type',
+            options: [
+              { label: 'Image', value: 'image' },
+              { label: 'Video', value: 'video' },
+            ],
+          },
+          backgroundImage: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Image" value={value} onChange={onChange} />
+            ),
+          },
+          backgroundVideo: { type: 'text', label: 'Video link' },
+          overlayOpacity: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <RangeField label="Darkening" value={value} onChange={onChange} min={0} max={0.8} step={0.05} defaultValue={0.35} />
+            ),
+          },
+        }),
+        gDecoration: grp('🌿 Decoration', {
+          topFloral: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Top flower image" value={value} onChange={onChange} />
+            ),
+          },
+          topFloralRotation: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <RangeField label="Top flower angle" value={value} onChange={onChange} min={-180} max={180} suffix="°" defaultValue={0} />
+            ),
+          },
+          bottomFloral: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Bottom flower image" value={value} onChange={onChange} />
+            ),
+          },
+          bottomFloralRotation: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <RangeField label="Bottom flower angle" value={value} onChange={onChange} min={-180} max={180} suffix="°" defaultValue={180} />
+            ),
+          },
+        }),
+        gCard: grp('🪟 Card', {
+          cardColor: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ColorField label="Colour" value={value} onChange={onChange} defaultValue="#ffffff" />
+            ),
+          },
+          cardOpacity: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <RangeField label="See-through" value={value} onChange={onChange} min={0.5} max={1} step={0.05} defaultValue={0.9} />
+            ),
+          },
+        }),
+        gButton: grp('🔘 Button', {
+          buttonText: { type: 'text', label: 'Text' },
+          buttonTextColor: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ColorField label="Text colour" value={value} onChange={onChange} defaultValue="#1c1916" />
+            ),
+          },
+          buttonBgColor: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ColorField label="Colour" value={value} onChange={onChange} defaultValue="#c9a45c" />
+            ),
+          },
+        }),
+        gEffects: grp('✨ Effects', {
+          particles: {
+            type: 'radio',
+            label: 'Floating sparkles',
+            options: [
+              { label: 'On', value: true },
+              { label: 'Off', value: false },
+            ],
+          },
+        }),
       },
       defaultProps: {
         bride: 'Bride',
@@ -477,24 +526,30 @@ export const config: Config = {
         buttonBgColor: '#c9a45c',
         particles: true,
       },
-      render: (props) => <EntranceSection {...(props as any)} type="entrance" editorPreview />,
+      render: (props) => <EntranceSection {...(flatten('entrance', props) as any)} type="entrance" editorPreview />,
     },
 
     Hero: {
-      label: 'Hero',
+      label: '💍 Hero (names & date)',
       fields: {
-        bride: { type: 'text', label: 'Bride Name' },
-        groom: { type: 'text', label: 'Groom Name' },
-        date: { type: 'text', label: 'Date (display)' },
-        tagline: { type: 'textarea', label: 'Tagline' },
-        image: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Background Image" value={value} onChange={onChange} />
-          ),
-        },
-        verse: { type: 'textarea', label: 'Verse Text' },
-        verseRef: { type: 'text', label: 'Verse Source' },
+        gContent: grp('📝 Names & date', {
+          bride: { type: 'text', label: "Bride's name" },
+          groom: { type: 'text', label: "Groom's name" },
+          date: { type: 'text', label: "Wedding date — shown text (e.g. '20 December 2026 · 4:00 PM')" },
+          tagline: { type: 'textarea', label: 'Short message under the names' },
+        }),
+        gPhoto: grp('🖼 Photo', {
+          image: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Background image" value={value} onChange={onChange} />
+            ),
+          },
+        }),
+        gQuote: grp('❝ Quote (optional)', {
+          verse: { type: 'textarea', label: 'Quote / verse text' },
+          verseRef: { type: 'text', label: 'Quote reference (e.g. Song of Solomon 3:4)' },
+        }),
         style: sectionStyleField,
       },
       defaultProps: {
@@ -506,42 +561,52 @@ export const config: Config = {
         verse: '',
         verseRef: '',
       },
-      render: (props) => <HeroSection {...(props as any)} type="hero" />,
+      render: (props) => <HeroSection {...(flatten('hero', props) as any)} type="hero" />,
     },
 
     Countdown: {
-      label: 'Countdown',
+      label: '⏳ Countdown',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
-        targetDate: {
-          type: 'text',
-          label: 'Wedding Date/Time (ISO, e.g. 2026-07-18T15:00:00+05:30)',
-        },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+          targetDate: {
+            type: 'text',
+            label: 'Wedding date & time (e.g. 2026-07-18T15:00:00+05:30)',
+          },
+        }),
         style: sectionStyleField,
       },
       defaultProps: { heading: 'Counting Down', targetDate: '2026-07-18T15:00:00+05:30' },
-      render: (props) => <CountdownSection {...(props as any)} type="countdown" />,
+      render: (props) => <CountdownSection {...(flatten('countdown', props) as any)} type="countdown" />,
     },
 
     Couple: {
-      label: 'Couple',
+      label: '👰 Couple (bride & groom)',
       fields: {
-        bride: { type: 'text', label: 'Bride Name' },
-        brideBio: { type: 'textarea', label: 'Bride Description' },
-        brideImage: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Bride Photo" value={value} onChange={onChange} />
-          ),
-        },
-        groom: { type: 'text', label: 'Groom Name' },
-        groomBio: { type: 'textarea', label: 'Groom Description' },
-        groomImage: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Groom Photo" value={value} onChange={onChange} />
-          ),
-        },
+        gBride: grp('👰 Bride', {
+          bride: { type: 'text', label: "Bride's name" },
+          brideBio: { type: 'textarea', label: 'About the bride' },
+          brideImage: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Bride's photo" value={value} onChange={onChange} />
+            ),
+          },
+        }),
+        gGroom: grp('🤵 Groom', {
+          groom: { type: 'text', label: "Groom's name" },
+          groomBio: { type: 'textarea', label: 'About the groom' },
+          groomImage: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Groom's photo" value={value} onChange={onChange} />
+            ),
+          },
+        }),
+        gQuote: grp('❝ Quote (optional)', {
+          verse: { type: 'textarea', label: 'Quote / verse under the couple' },
+          verseRef: { type: 'text', label: 'Quote reference' },
+        }),
         style: sectionStyleField,
       },
       defaultProps: {
@@ -551,44 +616,53 @@ export const config: Config = {
         groom: 'Groom',
         groomBio: '',
         groomImage: '',
+        verse: '',
+        verseRef: '',
       },
-      render: (props) => <CoupleSection {...(props as any)} type="couple" />,
+      render: (props) => <CoupleSection {...(flatten('couple', props) as any)} type="couple" />,
     },
 
     Story: {
-      label: 'Story',
+      label: '📖 Our story',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
-        sideImage: {
-          type: 'custom',
-          render: ({ value, onChange }) => (
-            <ImageUploadField label="Side Image" value={value} onChange={onChange} />
-          ),
-        },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+          sideImage: {
+            type: 'custom',
+            render: ({ value, onChange }: AnyFieldProps) => (
+              <ImageUploadField label="Side photo" value={value} onChange={onChange} />
+            ),
+          },
+        }),
         paragraphs: {
           type: 'array',
           label: 'Paragraphs',
           getItemSummary: (item: AnyProps) =>
             item.text?.slice(0, 40) || 'Paragraph',
           defaultItemProps: { text: '' },
-          arrayFields: { text: { type: 'textarea', label: 'Text' } },
+          arrayFields: { text: { type: 'textarea', label: 'Paragraph text' } },
         },
         style: sectionStyleField,
       },
       defaultProps: { heading: 'Our Story', sideImage: '', paragraphs: [{ text: '' }] },
-      render: ({ paragraphs, ...rest }) => (
-        <StorySection
-          type="story"
-          paragraphs={(paragraphs ?? []).map((p: { text: string }) => p.text)}
-          {...rest}
-        />
-      ),
+      render: (props) => {
+        const flat = flatten('story', props)
+        return (
+          <StorySection
+            {...(flat as any)}
+            type="story"
+            paragraphs={(flat.paragraphs ?? []).map((p: { text: string }) => p.text)}
+          />
+        )
+      },
     },
 
     Events: {
-      label: 'Events',
+      label: '📅 Events / schedule',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+        }),
         events: {
           type: 'array',
           label: 'Events',
@@ -603,16 +677,16 @@ export const config: Config = {
             photo: '',
           },
           arrayFields: {
-            name: { type: 'text', label: 'Name' },
+            name: { type: 'text', label: 'Event name' },
             date: { type: 'text', label: 'Date' },
             time: { type: 'text', label: 'Time' },
-            venue: { type: 'text', label: 'Venue' },
+            venue: { type: 'text', label: 'Venue name' },
             address: { type: 'text', label: 'Address' },
-            mapUrl: { type: 'text', label: 'Map URL' },
+            mapUrl: { type: 'text', label: 'Google Maps link' },
             photo: {
               type: 'custom',
               render: ({ value, onChange }) => (
-                <ImageUploadField label="Event Photo" value={value} onChange={onChange} />
+                <ImageUploadField label="Photo" value={value} onChange={onChange} />
               ),
             },
           },
@@ -620,107 +694,126 @@ export const config: Config = {
         style: sectionStyleField,
       },
       defaultProps: { heading: 'The Celebrations', events: [] },
-      render: (props) => <EventsSection {...(props as any)} type="events" />,
+      render: (props) => <EventsSection {...(flatten('events', props) as any)} type="events" />,
     },
 
     Timeline: {
-      label: 'Timeline',
+      label: '🕘 Timeline (order of the day)',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+        }),
         items: {
           type: 'array',
-          label: 'Items',
+          label: 'Times',
           getItemSummary: (item: AnyProps) =>
             [item.time, item.label].filter(Boolean).join(' · ') || 'Item',
           defaultItemProps: { time: '', label: '' },
           arrayFields: {
             time: { type: 'text', label: 'Time' },
-            label: { type: 'text', label: 'Label' },
+            label: { type: 'text', label: "What's happening" },
           },
         },
         style: sectionStyleField,
       },
       defaultProps: { heading: 'Order of the Day', items: [] },
-      render: (props) => <TimelineSection {...(props as any)} type="timeline" />,
+      render: (props) => <TimelineSection {...(flatten('timeline', props) as any)} type="timeline" />,
     },
 
     Gallery: {
-      label: 'Gallery',
+      label: '🖼 Photo gallery',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+        }),
         images: {
           type: 'custom',
           render: ({ value, onChange }) => (
-            <GalleryUploadField label="Images" value={value} onChange={onChange} />
+            <GalleryUploadField label="Photos" value={value} onChange={onChange} />
           ),
         },
         style: sectionStyleField,
       },
       defaultProps: { heading: 'Gallery', images: [] },
-      render: ({ images, ...rest }) => (
-        <GallerySection
-          type="gallery"
-          images={(images ?? []).map((i: { url: string }) => i.url)}
-          {...rest}
-        />
-      ),
+      render: (props) => {
+        const flat = flatten('gallery', props)
+        return (
+          <GallerySection
+            {...(flat as any)}
+            type="gallery"
+            images={(flat.images ?? []).map((i: { url: string }) => i.url)}
+          />
+        )
+      },
     },
 
     RSVP: {
-      label: 'RSVP',
+      label: '✉ RSVP form',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
-        message: { type: 'textarea', label: 'Message' },
-        rsvpSheetUrl: { type: 'text', label: 'RSVP Google Apps Script URL' },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+          message: { type: 'textarea', label: 'Message to guests' },
+          rsvpSheetUrl: {
+            type: 'text',
+            label: 'RSVP responses link — Google Apps Script (optional)',
+          },
+        }),
         style: sectionStyleField,
       },
       defaultProps: { heading: 'RSVP', message: '', rsvpSheetUrl: '' },
-      render: (props) => <RSVPSection type="rsvp" {...props} />,
+      render: (props) => <RSVPSection {...(flatten('rsvp', props) as any)} type="rsvp" />,
     },
 
     Inquiry: {
-      label: 'Inquiry / Contact',
+      label: '💬 Inquiries / contact',
       fields: {
-        heading: { type: 'text', label: 'Heading' },
-        message: { type: 'textarea', label: 'Message' },
-        inquirySheetUrl: { type: 'text', label: 'Inquiry Google Apps Script URL' },
+        gContent: grp('📝 Details', {
+          heading: { type: 'text', label: 'Heading' },
+          message: { type: 'textarea', label: 'Message to guests' },
+          inquirySheetUrl: {
+            type: 'text',
+            label: 'Inquiry responses link — Google Apps Script (optional)',
+          },
+        }),
         style: sectionStyleField,
       },
       defaultProps: { heading: 'Inquiries', message: '', inquirySheetUrl: '' },
-      render: (props) => <InquirySection type="inquiry" {...props} />,
+      render: (props) => <InquirySection {...(flatten('inquiry', props) as any)} type="inquiry" />,
     },
 
     Footer: {
-      label: 'Footer',
+      label: '🔚 Footer',
       fields: {
-        bride: { type: 'text', label: 'Bride Name' },
-        groom: { type: 'text', label: 'Groom Name' },
-        date: { type: 'text', label: 'Date' },
-        hashtag: { type: 'text', label: 'Hashtag' },
+        gNames: grp('📝 Details', {
+          bride: { type: 'text', label: "Bride's name" },
+          groom: { type: 'text', label: "Groom's name" },
+          date: { type: 'text', label: 'Wedding date' },
+          hashtag: { type: 'text', label: 'Hashtag (e.g. #AmaraNuwan2027)' },
+        }),
         contacts: {
           type: 'array',
-          label: 'Contacts',
+          label: 'Contact numbers',
           getItemSummary: (item: AnyProps) => item.name || 'Contact',
           defaultItemProps: { name: '', phone: '' },
           arrayFields: {
-            name: { type: 'text', label: 'Name' },
-            phone: { type: 'text', label: 'Phone' },
+            name: { type: 'text', label: 'Family / person' },
+            phone: { type: 'text', label: 'Phone number' },
           },
         },
         socials: {
           type: 'array',
-          label: 'Social Links',
+          label: 'Social links',
           getItemSummary: (item: AnyProps) => item.label || 'Link',
           defaultItemProps: { label: '', url: '' },
           arrayFields: {
-            label: { type: 'text', label: 'Label' },
-            url: { type: 'text', label: 'URL' },
+            label: { type: 'text', label: 'Name (e.g. Instagram)' },
+            url: { type: 'text', label: 'Link' },
           },
         },
         style: sectionStyleField,
       },
       defaultProps: { bride: 'Bride', groom: 'Groom', date: '', hashtag: '', contacts: [], socials: [] },
-      render: (props) => <FooterSection {...(props as any)} type="footer" />,
+      render: (props) => <FooterSection {...(flatten('footer', props) as any)} type="footer" />,
     },
   },
 }
@@ -751,7 +844,9 @@ function sectionToPuckProps(section: Section, index: number): AnyProps {
     props.images = (section.images ?? []).map((url) => ({ id: galleryUid(), url }))
   }
 
-  return props
+  // Nest scalar fields into their collapsible editor groups (paragraphs/images
+  // arrays and `style` stay top-level).
+  return nestForEditor(section.type, props)
 }
 
 /** Convert the live-site CoupleData JSON into Puck editor data. */
@@ -781,14 +876,16 @@ export function puckToCoupleData(puck: Data, fallbackSlug: string): CoupleData {
 
   const sections = puck.content.map((item) => {
     const type = TYPE_BY_COMPONENT[item.type]
-    const { id: _id, ...rest } = item.props as any
-    const section: AnyProps = { type, ...rest }
+    const { id: _id, ...rest } = item.props as AnyProps
+    // Flatten the collapsible editor groups back into the flat section shape.
+    const flat = flatten(type, rest)
+    const section: AnyProps = { type, ...flat }
 
     if (type === 'story') {
-      section.paragraphs = ((rest.paragraphs ?? []) as { text: string }[]).map((p) => p.text)
+      section.paragraphs = ((flat.paragraphs ?? []) as { text: string }[]).map((p) => p.text)
     }
     if (type === 'gallery') {
-      section.images = ((rest.images ?? []) as { url: string }[]).map((i) => i.url)
+      section.images = ((flat.images ?? []) as { url: string }[]).map((i) => i.url)
     }
 
     // Drop an empty style object so the exported JSON stays clean.

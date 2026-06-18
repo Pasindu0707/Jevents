@@ -1,0 +1,134 @@
+{
+  "slug": "sample-midnight",
+
+  "theme": {
+    "primaryColor": "#c9a45c",
+    "secondaryColor": "#2c2418",
+    "backgroundColor": "#100d0b",
+    "lineColor": "#c9a45c",
+    "lineStyle": "dotted",
+    "lineThickness": 1,
+    "accentTextColor": "#e7c987",
+    "dividerStyle": "floral"
+  },
+
+  "meta": {
+    "title": "Dinesh & Ishara · 20.12.2026",
+    "couple": "Dinesh & Ishara"
+  },
+
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Ishara",
+      "groom": "Dinesh",
+      "invitedText": "Request the honour of your presence at their wedding",
+      "brideFont": "'Pinyon Script', cursive",
+      "groomFont": "'Pinyon Script', cursive",
+      "brideColor": "#2c2418",
+      "groomColor": "#2c2418",
+      "overlayOpacity": 0.55,
+      "cardColor": "#ffffff",
+      "cardOpacity": 0.88,
+      "buttonText": "ENTER",
+      "buttonTextColor": "#100d0b",
+      "buttonBgColor": "#c9a45c",
+      "particles": true
+    },
+    {
+      "type": "hero",
+      "bride": "Ishara",
+      "groom": "Dinesh",
+      "date": "20 December 2026 · 7:00 PM",
+      "tagline": "An evening of gold, candlelight, and the beginning of always.",
+      "verse": "And now these three remain: faith, hope and love. But the greatest of these is love.",
+      "verseRef": "1 Corinthians 13:13"
+    },
+    {
+      "type": "countdown",
+      "heading": "The Wait Begins",
+      "targetDate": "2026-12-20T19:00:00+05:30"
+    },
+    {
+      "type": "couple",
+      "bride": "Ishara",
+      "groom": "Dinesh",
+      "brideBio": "Elegant, witty and endlessly kind — she lights up every celebration she's part of.",
+      "groomBio": "Thoughtful and devoted, he leads with patience and loves with his whole heart."
+    },
+    {
+      "type": "story",
+      "heading": "Our Journey",
+      "paragraphs": [
+        "Ten years ago we were classmates who barely spoke. Life had other plans.",
+        "We reconnected at a reunion, and this time the conversation never really stopped.",
+        "Under the December sky, with family watching, we promise the rest of our years to one another."
+      ],
+      "style": {
+        "particlesEnabled": true,
+        "particleStyle": "golddust",
+        "particleColor": "#e7c987",
+        "particleCount": 70,
+        "particleSpeed": "slow"
+      }
+    },
+    {
+      "type": "events",
+      "heading": "Celebrations",
+      "events": [
+        {
+          "name": "Registration",
+          "date": "20 December 2026",
+          "time": "5:30 PM",
+          "venue": "Cinnamon Grand",
+          "address": "Colombo 03"
+        },
+        {
+          "name": "Reception & Dinner",
+          "date": "20 December 2026",
+          "time": "7:00 PM",
+          "venue": "Grand Ballroom, Cinnamon Grand",
+          "address": "Colombo 03"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Order of the Evening",
+      "items": [
+        { "time": "5:30 PM", "label": "Registration" },
+        { "time": "7:00 PM", "label": "Grand Entrance" },
+        { "time": "7:30 PM", "label": "Toasts" },
+        { "time": "8:30 PM", "label": "Dinner" },
+        { "time": "12:00 AM", "label": "End of Evening" }
+      ]
+    },
+    {
+      "type": "inquiry",
+      "heading": "Questions?",
+      "message": "For directions or any details about the evening, send us a note and we'll be happy to help.",
+      "inquirySheetUrl": ""
+    },
+    {
+      "type": "rsvp",
+      "heading": "RSVP",
+      "message": "Black-tie optional. Kindly confirm your attendance before 30 November 2026.",
+      "rsvpSheetUrl": ""
+    },
+    {
+      "type": "footer",
+      "bride": "Ishara",
+      "groom": "Dinesh",
+      "date": "20 December 2026",
+      "hashtag": "#DineshAndIshara2026",
+      "contacts": [
+        { "name": "Bride's Family", "phone": "+94 70 111 2222" },
+        { "name": "Groom's Family", "phone": "+94 77 333 4444" }
+      ],
+      "socials": [
+        { "label": "Instagram", "url": "https://instagram.com" },
+        { "label": "Facebook", "url": "https://facebook.com" }
+      ]
+    }
+  ]
+}

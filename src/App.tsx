@@ -10,9 +10,12 @@ const MarketingPage = lazy(() =>
 // Guest-facing couple invitation page, ported from Project B (Invitely). Its
 // dark, GSAP-animated section engine is scoped under `.invite-root`.
 const CouplePage = lazy(() => import('@/features/invite/pages/CouplePage'))
-const AdminPage = lazy(() =>
-  import('@/features/admin/AdminPage').then((m) => ({ default: m.AdminPage })),
-)
+// Admin shell (collapsible sidebar + login gate) with routed sections.
+const AdminLayout = lazy(() => import('@/features/admin/AdminLayout'))
+const DashboardView = lazy(() => import('@/features/admin/DashboardView'))
+const InvitationsView = lazy(() => import('@/features/admin/InvitationsView'))
+const MediaView = lazy(() => import('@/features/admin/MediaView'))
+const SettingsView = lazy(() => import('@/features/admin/SettingsView'))
 const AdminPreviewPage = lazy(() =>
   import('@/features/admin/AdminPreviewPage').then((m) => ({ default: m.AdminPreviewPage })),
 )
@@ -31,7 +34,11 @@ const CoupleEditPage = lazy(() =>
  * App shell + routing.
  *
  *   /                          → MarketingPage   (public homepage)
- *   /admin                     → AdminPage        (login-gated dashboard)
+ *   /admin                     → AdminLayout      (login-gated shell)
+ *     index                    → DashboardView
+ *     /admin/invitations       → InvitationsView
+ *     /admin/media             → MediaView        (Cloudinary library)
+ *     /admin/settings          → SettingsView
  *   /admin/preview             → AdminPreviewPage (draft preview)
  *   /admin/import              → AdminImportPage  (validate/import JSON)
  *   /admin/couples/new         → CoupleAdminGate   (Project B Puck builder, gated)
@@ -53,7 +60,12 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<MarketingPage />} />
-          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<DashboardView />} />
+            <Route path="invitations" element={<InvitationsView />} />
+            <Route path="media" element={<MediaView />} />
+            <Route path="settings" element={<SettingsView />} />
+          </Route>
           <Route path="/admin/preview" element={<AdminPreviewPage />} />
           <Route path="/admin/import" element={<AdminImportPage />} />
           <Route path="/admin/couples/new" element={<CoupleAdminGate />} />

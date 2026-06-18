@@ -1,0 +1,127 @@
+{
+  "slug": "sample-rosegold",
+
+  "theme": {
+    "primaryColor": "#c08a7d",
+    "secondaryColor": "#4a3b38",
+    "backgroundColor": "#1a1416",
+    "lineColor": "#c08a7d",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#e8b4a0",
+    "dividerStyle": "floral"
+  },
+
+  "meta": {
+    "title": "Sahan & Tharushi · 12.04.2026",
+    "couple": "Sahan & Tharushi"
+  },
+
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Tharushi",
+      "groom": "Sahan",
+      "invitedText": "Together with their families, request the pleasure of your company",
+      "brideFont": "'Great Vibes', cursive",
+      "groomFont": "'Great Vibes', cursive",
+      "brideColor": "#4a3b38",
+      "groomColor": "#4a3b38",
+      "overlayOpacity": 0.45,
+      "cardColor": "#fff7f4",
+      "cardOpacity": 0.92,
+      "buttonText": "OPEN INVITATION",
+      "buttonTextColor": "#1a1416",
+      "buttonBgColor": "#c08a7d",
+      "particles": true
+    },
+    {
+      "type": "hero",
+      "bride": "Tharushi",
+      "groom": "Sahan",
+      "date": "12 April 2026 · 4:00 PM",
+      "tagline": "Two hearts, one promise — and a love that only grows.",
+      "verse": "Where you go I will go, and where you stay I will stay.",
+      "verseRef": "Ruth 1:16"
+    },
+    {
+      "type": "countdown",
+      "heading": "Counting Down to Forever",
+      "targetDate": "2026-04-12T16:00:00+05:30"
+    },
+    {
+      "type": "couple",
+      "bride": "Tharushi",
+      "groom": "Sahan",
+      "brideBio": "A gentle soul with a contagious laugh, happiest with a book in hand and the people she loves nearby.",
+      "groomBio": "Calm, kind and quietly funny — the steady hand and the warm heart she always hoped for."
+    },
+    {
+      "type": "story",
+      "heading": "Our Story",
+      "paragraphs": [
+        "We met in the spring of 2022, introduced by mutual friends who were certain we'd get along. They were right.",
+        "What started as long coffee conversations grew into shared dreams, late-night phone calls, and a quiet certainty.",
+        "On a rainy evening in Ella, surrounded by mist and fairy lights, the question was asked — and joyfully answered."
+      ],
+      "style": {
+        "particlesEnabled": true,
+        "particleStyle": "petals",
+        "particleColor": "#e8b4a0",
+        "particleCount": 50,
+        "particleSpeed": "slow"
+      }
+    },
+    {
+      "type": "events",
+      "heading": "The Celebrations",
+      "events": [
+        {
+          "name": "Church Ceremony",
+          "date": "12 April 2026",
+          "time": "4:00 PM",
+          "venue": "St. Mary's Church",
+          "address": "Negombo"
+        },
+        {
+          "name": "Reception",
+          "date": "12 April 2026",
+          "time": "7:00 PM",
+          "venue": "The Grand Ballroom",
+          "address": "Waters Edge, Battaramulla"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Order of the Day",
+      "items": [
+        { "time": "4:00 PM", "label": "Ceremony" },
+        { "time": "6:30 PM", "label": "Cocktails" },
+        { "time": "7:00 PM", "label": "Reception" },
+        { "time": "8:30 PM", "label": "Dinner" },
+        { "time": "11:00 PM", "label": "Last Dance" }
+      ]
+    },
+    {
+      "type": "rsvp",
+      "heading": "Will You Join Us?",
+      "message": "Your presence would mean the world to us. Kindly let us know by 1 March 2026.",
+      "rsvpSheetUrl": ""
+    },
+    {
+      "type": "footer",
+      "bride": "Tharushi",
+      "groom": "Sahan",
+      "date": "12 April 2026",
+      "hashtag": "#SahanAndTharushi",
+      "contacts": [
+        { "name": "Bride's Family", "phone": "+94 77 123 4567" },
+        { "name": "Groom's Family", "phone": "+94 76 765 4321" }
+      ],
+      "socials": [
+        { "label": "Instagram", "url": "https://instagram.com" }
+      ]
+    }
+  ]
+}

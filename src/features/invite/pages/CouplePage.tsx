@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import type { CoupleData } from '../types'
 import { renderSection } from '../registry'
@@ -70,7 +70,15 @@ export default function CouplePage() {
   return (
     <div className="invite-root" ref={rootRef}>
       <ThemeProvider theme={state.data.theme} targetRef={rootRef} />
-      <main>{state.data.sections.map((section, i) => renderSection(section, i))}</main>
+      <main>
+        {state.data.sections.map((section, i) => (
+          <Fragment key={section.id ?? i}>
+            {renderSection(section, i)}
+            {/* Themed separator after every section except the last. */}
+            {i < state.data.sections.length - 1 && <hr className="section-hr" />}
+          </Fragment>
+        ))}
+      </main>
       <AgencyFooter />
       {state.data.musicUrl && <MusicPlayer src={state.data.musicUrl} />}
     </div>

@@ -27,7 +27,6 @@ export default function HeroSection({
         .from('.hero__amp', { opacity: 0, scale: 0.6, duration: 1 }, '-=0.9')
         .from('.hero__date', { opacity: 0, y: 20, duration: 1 }, '-=0.6')
         .from('.hero__tagline', { opacity: 0, y: 20, duration: 1 }, '-=0.7')
-        .from('.hero__scroll', { opacity: 0, duration: 1 }, '-=0.4')
     },
     { scope: root },
   )
@@ -85,10 +84,6 @@ export default function HeroSection({
             “{verse}”{verseRef && <span className="hero__verse-ref"> — {verseRef}</span>}
           </p>
         )}
-      </div>
-      <div className="hero__scroll">
-        <span>Scroll</span>
-        <span className="hero__scroll-line" />
       </div>
     </section>
   )

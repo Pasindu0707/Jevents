@@ -26,6 +26,15 @@ export default function RSVPSection({
   const submitting = status === 'submitting'
   const isAttending = attending === ATTEND_YES
 
+  // Reset the form so a guest can submit another RSVP (e.g. for another person).
+  function handleAddAnother() {
+    setName('')
+    setAttending(ATTEND_YES)
+    setGuests(1)
+    setNote('')
+    setStatus('idle')
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (!configured) return
@@ -59,6 +68,9 @@ export default function RSVPSection({
             <p className="form-success__title">
               Thank you {name}! We can't wait to celebrate with you
             </p>
+            <button type="button" className="btn" onClick={handleAddAnother}>
+              Add another RSVP
+            </button>
           </div>
         ) : (
           <form className="form reveal" onSubmit={handleSubmit}>

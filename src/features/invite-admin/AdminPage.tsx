@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Puck, type Data } from '@measured/puck'
 import '@measured/puck/puck.css'
 import { config, coupleDataToPuck, puckToCoupleData, emptyPuckData } from './puck.config'
@@ -23,11 +23,24 @@ function downloadJSON(filename: string, obj: unknown) {
 
 export default function AdminPage() {
   const [params] = useSearchParams()
+  const navigate = useNavigate()
   const slug = params.get('couple') || 'dewmini-janni'
 
   const [initialData, setInitialData] = useState<Data | null>(null)
   // Latest editor state, kept in a ref so the toolbar button can export it.
   const liveData = useRef<Data | null>(null)
+  // Becomes true once the user edits, so "Back" can warn before discarding.
+  const dirtyRef = useRef(false)
+
+  function handleBack() {
+    if (
+      dirtyRef.current &&
+      !window.confirm('Leave the editor? Export your JSON first or unsaved changes are lost.')
+    ) {
+      return
+    }
+    navigate('/admin/invitations')
+  }
 
   useEffect(() => {
     let cancelled = false
@@ -70,14 +83,20 @@ export default function AdminPage() {
         config={config}
         data={initialData}
         iframe={{ enabled: false }}
-        headerTitle={`Invitely · ${slug}`}
+        headerTitle={`Jevents · ${slug}`}
         onChange={(data) => {
           liveData.current = data
+          dirtyRef.current = true
         }}
         renderHeaderActions={() => (
-          <button type="button" className="admin-export" onClick={handleExport}>
-            Save / Export JSON
-          </button>
+          <div className="admin-actions">
+            <button type="button" className="admin-back" onClick={handleBack}>
+              ← Back
+            </button>
+            <button type="button" className="admin-export" onClick={handleExport}>
+              Save / Export JSON
+            </button>
+          </div>
         )}
       />
     </div>

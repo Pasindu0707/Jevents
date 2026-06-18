@@ -146,6 +146,16 @@
   text-align: center;
 }
 
+/* Separator rendered between sections by CouplePage. Uses the themed line. */
+:where(.invite-root) .section-hr {
+  width: min(1080px, 86%);
+  height: 0;
+  border: none;
+  border-top: var(--line-thickness, 1px) var(--line-style, solid) var(--line);
+  margin: 0 auto;
+  opacity: 0.75;
+}
+
 /* Scroll-reveal initial state (GSAP animates these in) */
 :where(.invite-root) .reveal {
   opacity: 0;

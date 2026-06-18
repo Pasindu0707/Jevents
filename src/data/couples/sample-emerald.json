@@ -1,0 +1,122 @@
+{
+  "slug": "sample-emerald",
+
+  "theme": {
+    "primaryColor": "#7fa37e",
+    "secondaryColor": "#23302a",
+    "backgroundColor": "#0f1713",
+    "lineColor": "#7fa37e",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#bcd6b2",
+    "dividerStyle": "line"
+  },
+
+  "meta": {
+    "title": "Kavindu & Nethmi · 09.08.2026",
+    "couple": "Kavindu & Nethmi"
+  },
+
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Nethmi",
+      "groom": "Kavindu",
+      "invitedText": "You are warmly invited to celebrate the wedding of",
+      "brideFont": "'Dancing Script', cursive",
+      "groomFont": "'Dancing Script', cursive",
+      "brideColor": "#23302a",
+      "groomColor": "#23302a",
+      "overlayOpacity": 0.5,
+      "cardColor": "#f3f6ee",
+      "cardOpacity": 0.9,
+      "buttonText": "VIEW INVITATION",
+      "buttonTextColor": "#0f1713",
+      "buttonBgColor": "#7fa37e",
+      "particles": true
+    },
+    {
+      "type": "hero",
+      "bride": "Nethmi",
+      "groom": "Kavindu",
+      "date": "09 August 2026 · 11:00 AM",
+      "tagline": "Surrounded by green hills and the people we love, we begin our forever."
+    },
+    {
+      "type": "countdown",
+      "heading": "Until We Say I Do",
+      "targetDate": "2026-08-09T11:00:00+05:30"
+    },
+    {
+      "type": "couple",
+      "bride": "Nethmi",
+      "groom": "Kavindu",
+      "brideBio": "An artist at heart, she finds beauty everywhere — and brings warmth into every room she enters.",
+      "groomBio": "Adventurous and grounded, he turns ordinary days into stories worth telling.",
+      "verse": "I have found the one whom my soul loves.",
+      "verseRef": "Song of Solomon 3:4"
+    },
+    {
+      "type": "story",
+      "heading": "How It All Began",
+      "paragraphs": [
+        "A chance meeting at a friend's birthday turned into a conversation that neither of us wanted to end.",
+        "Through hikes, road trips and a hundred shared playlists, a friendship quietly became something forever."
+      ]
+    },
+    {
+      "type": "events",
+      "heading": "Join the Celebration",
+      "events": [
+        {
+          "name": "Poruwa Ceremony",
+          "date": "09 August 2026",
+          "time": "11:00 AM",
+          "venue": "Heritage Kandalama",
+          "address": "Dambulla"
+        },
+        {
+          "name": "Homecoming",
+          "date": "16 August 2026",
+          "time": "6:30 PM",
+          "venue": "Family Residence",
+          "address": "Kurunegala"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "The Day",
+      "items": [
+        { "time": "11:00 AM", "label": "Poruwa Ceremony" },
+        { "time": "12:30 PM", "label": "Lunch" },
+        { "time": "2:00 PM", "label": "Photographs" }
+      ],
+      "style": {
+        "particlesEnabled": true,
+        "particleStyle": "fireflies",
+        "particleColor": "#bcd6b2",
+        "particleCount": 40,
+        "particleSpeed": "medium"
+      }
+    },
+    {
+      "type": "rsvp",
+      "heading": "Kindly RSVP",
+      "message": "We can't wait to celebrate with you. Please respond before 10 July 2026.",
+      "rsvpSheetUrl": ""
+    },
+    {
+      "type": "footer",
+      "bride": "Nethmi",
+      "groom": "Kavindu",
+      "date": "09 August 2026",
+      "hashtag": "#KavinduWedsNethmi",
+      "contacts": [
+        { "name": "Nethmi's Family", "phone": "+94 71 222 3344" },
+        { "name": "Kavindu's Family", "phone": "+94 77 555 6677" }
+      ],
+      "socials": []
+    }
+  ]
+}

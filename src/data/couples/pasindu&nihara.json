@@ -1,0 +1,179 @@
+{
+  "slug": "pasindu&nihara",
+  "theme": {
+    "primaryColor": "#637953",
+    "secondaryColor": "#2c2418",
+    "backgroundColor": "#14110f",
+    "lineColor": "#637953",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#b07d3f",
+    "dividerStyle": "line"
+  },
+  "meta": {
+    "title": "Nihara & Pasindu · 16.01.2027",
+    "couple": "Nihara & Pasindu"
+  },
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "NIHARA",
+      "groom": "PASINDU",
+      "invitedText": "You are invited to the Wedding of",
+      "brideFont": "'Dancing Script', cursive",
+      "groomFont": "'Dancing Script', cursive",
+      "brideColor": "#2c2418",
+      "groomColor": "#2c2418",
+      "overlayOpacity": 0.45,
+      "cardColor": "#ffffff",
+      "cardOpacity": 0.9,
+      "buttonText": "VIEW INVITATION",
+      "buttonTextColor": "#1c1916",
+      "buttonBgColor": "#637953",
+      "particles": true,
+      "brideFontSize": 82,
+      "groomFontSize": 82,
+      "backgroundImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781692782/dg4isf728y0aan8q8ixj.png",
+      "topFloral": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781691858/en6d82xkawj0arfwwutg.png",
+      "bottomFloral": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781691858/en6d82xkawj0arfwwutg.png",
+      "topFloralRotation": -180,
+      "bottomFloralRotation": 0
+    },
+    {
+      "type": "hero",
+      "bride": "Nihara",
+      "groom": "Pasindu",
+      "date": "16 January 2027 · 9:30 AM",
+      "style": {
+        "backgroundType": "image",
+        "overlayOpacity": 0.9,
+        "particlesEnabled": true,
+        "particleCount": 20,
+        "particleSpeed": "slow"
+      },
+      "tagline": "Two souls, one heart and a forever that begins this day.",
+      "image": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781692442/lrjfdhkg2beu4zhry7t1.png",
+      "verse": "I have found the one whom my soul loves",
+      "verseRef": "Song of Solomon 3:4"
+    },
+    {
+      "type": "countdown",
+      "heading": "Until We Say \"I Do\"",
+      "targetDate": "2027-01-16T09:30:00+05:30",
+      "style": {
+        "overlayOpacity": 0,
+        "particlesEnabled": false,
+        "particleCount": 20
+      }
+    },
+    {
+      "type": "couple",
+      "bride": "Nihara",
+      "groom": "Pasindu",
+      "brideBio": "The heart of every room she enters kind, radiant, and impossibly loved.",
+      "groomBio": "Steady, warm, and devoted the one her soul was always searching for.",
+      "brideImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781693266/oxr1ccwxjzgedl5f9p0w.jpg",
+      "groomImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781693287/ybbuvbvz1l5cvfx8kvch.jpg"
+    },
+    {
+      "type": "story",
+      "heading": "Our Story",
+      "sideImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781693366/zf6sra8jrlgysoekcdre.png",
+      "paragraphs": [
+        "How We Met \"Amid the everyday, two paths quietly crossed, and nothing felt ordinary again.\"",
+        "Falling in Love \"Late conversations, shared dreams, and a thousand small moments that became everything.\"",
+        "The Proposal  A question, a yes, and the beginning of the rest of our lives together."
+      ]
+    },
+    {
+      "type": "events",
+      "heading": "The Celebrations",
+      "events": [
+        {
+          "name": "Holy Mass",
+          "date": "16 January 2027",
+          "time": "9:30 AM",
+          "venue": "St Joseph's Church ",
+          "address": "Wennappuwa",
+          "mapUrl": "https://maps.app.goo.gl/mTQt2TYh3dAJsnhA7",
+          "photo": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781693557/twcattnwzj7678y7tuql.jpg"
+        },
+        {
+          "name": "Reception",
+          "date": "17 January 2027",
+          "time": "7:00 PM",
+          "venue": "The Maze- Glass House",
+          "address": "Wennappuwa",
+          "mapUrl": "https://maps.app.goo.gl/mTQt2TYh3dAJsnhA7",
+          "photo": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781693736/hipphvpdjztqmm6ez1pu.jpg"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Order of the Day 1",
+      "items": [
+        {
+          "time": "8:00 AM",
+          "label": "Tea Table - Houses"
+        },
+        {
+          "time": "9:30 AM",
+          "label": "Holy Mass"
+        },
+        {
+          "time": "11:00 AM",
+          "label": "End of Holy Mass "
+        },
+        {
+          "time": "11:00",
+          "label": "Tea table at the church"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Order of the Day 1",
+      "items": [
+        {
+          "time": "7:00 PM",
+          "label": "Function Begins"
+        },
+        {
+          "time": "7:45 PM",
+          "label": "Bar Open"
+        },
+        {
+          "time": "8:30 PM",
+          "label": "Dinner"
+        },
+        {
+          "time": "12:00 AM",
+          "label": "End of Evening"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "heading": "Gallery",
+      "images": [
+        "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781781351/agmkbju2hc6k2ljxhpei.png",
+        "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781781329/mxqoj9zzr8j9xjcbiryf.webp",
+        "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1781781359/o9qwxa1p9flygoqopl0c.png"
+      ]
+    },
+    {
+      "type": "rsvp",
+      "heading": "RSVP",
+      "message": "Kindly let us know if you will be joining us on our special day.",
+      "rsvpSheetUrl": "https://script.google.com/macros/s/AKfycbzQo-GUD854Rk0ADgo0_oRr_AyI7Jbbu03VtF2Kq2ebQfnr_-hLMyyEXIg5U2qh-c0P/exec"
+    },
+    {
+      "type": "footer",
+      "bride": "Nihara",
+      "groom": "Pasindu",
+      "date": "16 January 2027",
+      "contacts": []
+    }
+  ]
+}
