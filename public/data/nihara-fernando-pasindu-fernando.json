@@ -1,0 +1,64 @@
+{
+  "slug": "nihara-fernando-pasindu-fernando",
+  "theme": {
+    "primaryColor": "#637953",
+    "secondaryColor": "#2c2418",
+    "backgroundColor": "#14110f",
+    "lineColor": "#637953",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#b07d3f",
+    "dividerStyle": "line"
+  },
+  "meta": {
+    "title": "Nihara & Pasindu · 16.01.2027",
+    "couple": "Nihara & Pasindu"
+  },
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Nihara",
+      "groom": "Pasindu",
+      "invitedText": "You are invited to the Wedding of",
+      "brideFont": "'Great Vibes', cursive",
+      "groomFont": "'Great Vibes', cursive",
+      "brideColor": "#2c2418",
+      "groomColor": "#2c2418",
+      "overlayOpacity": 0.45,
+      "cardColor": "#ffffff",
+      "cardOpacity": 0.9,
+      "buttonText": "VIEW INVITATION",
+      "buttonTextColor": "#1c1916",
+      "buttonBgColor": "#637953",
+      "particles": true
+    },
+    {
+      "type": "hero",
+      "bride": "Nihara",
+      "groom": "Pasindu",
+      "date": "16 January 2027 · 9:30 AM"
+    },
+    {
+      "type": "countdown",
+      "heading": "Until We Say \"I Do\"",
+      "targetDate": "2027-01-16T09:30:00+05:30"
+    },
+    {
+      "type": "couple",
+      "bride": "Nihara",
+      "groom": "Pasindu"
+    },
+    {
+      "type": "rsvp",
+      "heading": "RSVP",
+      "message": "Kindly let us know if you will be joining us on our special day.",
+      "rsvpSheetUrl": ""
+    },
+    {
+      "type": "footer",
+      "bride": "Nihara",
+      "groom": "Pasindu",
+      "date": "16 January 2027"
+    }
+  ]
+}

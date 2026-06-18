@@ -1,0 +1,212 @@
+/* ===================== ImageUploadField ===================== */
+.iuf {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iuf__preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iuf__thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e2e2;
+  background: #f4f4f4;
+}
+
+.iuf__placeholder {
+  font-size: 12px;
+  color: #888;
+  padding: 10px;
+  border: 1px dashed #d0d0d0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.iuf__upload,
+.guf__add {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #c9a45c;
+  background: #14110f;
+  color: #e7c987;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.iuf__upload:hover,
+.guf__add:hover {
+  background: #c9a45c;
+  color: #14110f;
+}
+
+.iuf__link {
+  font: inherit;
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: #b25a4f;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.iuf__input {
+  font: inherit;
+  font-size: 13px;
+  padding: 7px 9px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* ===================== GalleryUploadField ===================== */
+.guf__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.guf__item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e2e2;
+  background: #f4f4f4;
+}
+
+.guf__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.guf__empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.guf__handle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+}
+
+.guf__handle:active {
+  cursor: grabbing;
+}
+
+.guf__remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(178, 58, 47, 0.92);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.guf__remove:hover {
+  background: #b23a2f;
+}
+
+/* ===================== ColorField ===================== */
+.cf {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cf__swatch {
+  width: 40px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  flex: none;
+}
+
+.cf__hex {
+  font: inherit;
+  font-size: 13px;
+  color: #1a1a1a;
+  padding: 7px 9px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* ===================== RangeField ===================== */
+.rf {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rf__range {
+  flex: 1;
+  accent-color: #c9a45c;
+  cursor: pointer;
+}
+
+.rf__value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  min-width: 46px;
+  text-align: right;
+}
+
+/* ===================== Admin field legibility fix =====================
+   Puck's sidebars use a light theme, but the app sets `color-scheme: dark`,
+   so form controls inherit dark text AND a dark UA background — rendering
+   illegibly (white-on-white for Puck's own inputs, dark-on-dark for custom
+   ones). Force dark text on a light background for every sidebar control,
+   then restore the intentionally dark styling inside the live preview. */
+.admin-root input:not([type='range']):not([type='color']),
+.admin-root textarea,
+.admin-root select {
+  color: #1a1a1a;
+  background-color: #fff;
+}
+
+.admin-root .admin-preview input:not([type='range']):not([type='color']),
+.admin-root .admin-preview textarea,
+.admin-root .admin-preview select {
+  color: var(--cream);
+  background-color: rgba(0, 0, 0, 0.25);
+}

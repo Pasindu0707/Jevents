@@ -1,0 +1,104 @@
+.music-player {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--gold, #c9a45c);
+  background: rgba(20, 17, 15, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.music-player:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.music-player__disc {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.music-player__icon,
+.music-player__note {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* The vinyl record rotates slowly while playing. */
+.music-player__icon {
+  transform-origin: 50% 50%;
+}
+
+.music-player.is-playing .music-player__icon {
+  animation: vinylSpin 4s linear infinite;
+}
+
+/* Vinyl colours */
+.mp-vinyl {
+  fill: #1a1614;
+  stroke: var(--gold, #c9a45c);
+  stroke-width: 0.6;
+}
+.mp-groove {
+  fill: none;
+  stroke: rgba(201, 164, 92, 0.35);
+  stroke-width: 0.5;
+}
+.mp-label {
+  fill: var(--gold, #c9a45c);
+}
+.mp-hole {
+  fill: #14110f;
+}
+
+/* Music note overlay (small, sits over the label) */
+.music-player__note {
+  transform: scale(0.42) translate(2px, -1px);
+  transform-origin: 50% 50%;
+}
+.mp-note-stroke {
+  fill: none;
+  stroke: var(--bg-deep, #0d0b0a);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mp-note-fill {
+  fill: var(--bg-deep, #0d0b0a);
+}
+
+@keyframes vinylSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gentle pulse when autoplay was blocked, inviting the user to tap. */
+.music-player.is-blocked {
+  animation: mpPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes mpPulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(201, 164, 92, 0.5);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 12px rgba(201, 164, 92, 0);
+  }
+}

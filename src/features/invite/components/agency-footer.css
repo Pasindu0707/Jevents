@@ -1,0 +1,115 @@
+/* ===================== TASK 4 — Permanent agency footer ===================== */
+.agency-footer {
+  background: #080706;
+  color: #e8e3da;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.agency-footer__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem) 2.5rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.agency-footer__brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.agency-footer__tagline {
+  font-family: 'Montserrat', 'Lato', system-ui, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #b7b1a8;
+  max-width: 46ch;
+}
+
+.agency-footer__cta {
+  margin-top: 1.4rem;
+  font-family: 'Montserrat', 'Lato', system-ui, sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  color: #d8d2c8;
+}
+
+.agency-footer__col--social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.agency-footer__social-label {
+  font-family: 'Montserrat', 'Lato', system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #8a857d;
+}
+
+.agency-footer__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.agency-footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #cfc9bf;
+  font-family: 'Montserrat', 'Lato', system-ui, sans-serif;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.agency-footer__social svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex: none;
+  transition: transform 0.25s ease;
+}
+
+.agency-footer__social:hover {
+  color: #fff;
+}
+
+.agency-footer__social:hover svg {
+  transform: scale(1.12);
+}
+
+.agency-footer__bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  font-family: 'Montserrat', 'Lato', system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: #8a857d;
+}
+
+.agency-footer__bar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.agency-footer__heart {
+  width: 14px;
+  height: 14px;
+  fill: #c9534e;
+}
+
+@media (max-width: 720px) {
+  .agency-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}

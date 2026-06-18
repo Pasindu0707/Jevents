@@ -1,0 +1,148 @@
+/* ===================== TASK 2 — Section particle layer ===================== */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particles__dot {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, opacity;
+}
+
+/* ---- Bokeh: soft blurred dots rising upward ---- */
+.particles--bokeh .particles__dot {
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff,
+    var(--particle-color) 55%,
+    transparent 72%
+  );
+  filter: blur(0.5px);
+  animation-name: pRise;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ---- Gold dust: tiny specks drifting up ---- */
+.particles--golddust .particles__dot {
+  background: var(--particle-color);
+  box-shadow: 0 0 6px var(--particle-color);
+  transform: scale(0.5);
+  animation-name: pRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* ---- Snow: pale dots falling ---- */
+.particles--snow .particles__dot {
+  background: var(--particle-color);
+  filter: blur(0.4px);
+  animation-name: pFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* ---- Petals: rotating soft ovals falling ---- */
+.particles--petals .particles__dot {
+  background: var(--particle-color);
+  border-radius: 70% 0 70% 0;
+  animation-name: pPetal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ---- Sparkles: twinkling stars in place ---- */
+.particles--sparkles .particles__dot {
+  background: radial-gradient(circle, #fff 0%, var(--particle-color) 45%, transparent 70%);
+  box-shadow: 0 0 6px var(--particle-color);
+  animation-name: pTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* ---- Fireflies: glowing dots floating & flickering ---- */
+.particles--fireflies .particles__dot {
+  background: var(--particle-color);
+  box-shadow: 0 0 8px 2px var(--particle-color);
+  animation-name: pFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pRise {
+  0% {
+    transform: translateY(20vh) translateX(0) scale(0.85);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(var(--drift, 10px)) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes pFall {
+  0% {
+    transform: translateY(-20vh) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) translateX(var(--drift, 10px));
+    opacity: 0;
+  }
+}
+
+@keyframes pPetal {
+  0% {
+    transform: translateY(-20vh) translateX(0) rotate(var(--rot, 0deg));
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) translateX(var(--drift, 20px)) rotate(calc(var(--rot, 0deg) + 360deg));
+    opacity: 0;
+  }
+}
+
+@keyframes pTwinkle {
+  0%,
+  100% {
+    transform: scale(0.4);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes pFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(0.9);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(var(--drift, 20px), -18px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(var(--drift, 20px) * -1), -32px) scale(0.95);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(var(--drift, 20px), -12px) scale(1.05);
+    opacity: 0.9;
+  }
+}

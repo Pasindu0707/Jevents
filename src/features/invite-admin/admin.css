@@ -1,0 +1,47 @@
+/* The Puck editor wants a full-height host. */
+.admin-root {
+  height: 100vh;
+  width: 100%;
+  /* Puck ships its own light UI chrome; reset the dark page colors locally so
+     its sidebars/fields are legible while the preview keeps the wedding theme. */
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+.admin-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+}
+
+/* Toolbar export button */
+.admin-export {
+  font-family: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid #c9a45c;
+  background: #14110f;
+  color: #e7c987;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.admin-export:hover {
+  background: #c9a45c;
+  color: #14110f;
+}
+
+/* The live preview keeps the dark wedding aesthetic inside Puck's frame. */
+.admin-root .admin-preview {
+  background: var(--bg);
+  color: var(--cream);
+  min-height: 100%;
+}

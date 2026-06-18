@@ -7,9 +7,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 const MarketingPage = lazy(() =>
   import('@/features/marketing/MarketingPage').then((m) => ({ default: m.MarketingPage })),
 )
-const InvitationPage = lazy(() =>
-  import('@/features/invitation/InvitationPage').then((m) => ({ default: m.InvitationPage })),
-)
+// Guest-facing couple invitation page, ported from Project B (Invitely). Its
+// dark, GSAP-animated section engine is scoped under `.invite-root`.
+const CouplePage = lazy(() => import('@/features/invite/pages/CouplePage'))
 const AdminPage = lazy(() =>
   import('@/features/admin/AdminPage').then((m) => ({ default: m.AdminPage })),
 )
@@ -19,9 +19,10 @@ const AdminPreviewPage = lazy(() =>
 const AdminImportPage = lazy(() =>
   import('@/features/admin/AdminImportPage').then((m) => ({ default: m.AdminImportPage })),
 )
-const CoupleNewPage = lazy(() =>
-  import('@/features/admin/CoupleNewPage').then((m) => ({ default: m.CoupleNewPage })),
-)
+// "New Invitation" now opens Project B's Puck visual builder (login-gated,
+// reusing Project A's admin auth). It edits the section-based couple JSON in
+// /Jevents/data/. The Puck editor + @measured/puck load in their own chunk.
+const CoupleAdminGate = lazy(() => import('@/features/invite-admin/CoupleAdminGate'))
 const CoupleEditPage = lazy(() =>
   import('@/features/admin/CoupleEditPage').then((m) => ({ default: m.CoupleEditPage })),
 )
@@ -33,9 +34,9 @@ const CoupleEditPage = lazy(() =>
  *   /admin                     → AdminPage        (login-gated dashboard)
  *   /admin/preview             → AdminPreviewPage (draft preview)
  *   /admin/import              → AdminImportPage  (validate/import JSON)
- *   /admin/couples/new         → CoupleNewPage
+ *   /admin/couples/new         → CoupleAdminGate   (Project B Puck builder, gated)
  *   /admin/couples/:slug/edit  → CoupleEditPage
- *   /:slug                     → InvitationPage   (per-couple invitation)
+ *   /:coupleSlug               → CouplePage        (per-couple invitation, Project B)
  *
  * basename comes from Vite's base ('/Jevents/' on GitHub Pages, '/' on a root
  * domain). Static routes outrank /:slug.
@@ -55,9 +56,9 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/admin/preview" element={<AdminPreviewPage />} />
           <Route path="/admin/import" element={<AdminImportPage />} />
-          <Route path="/admin/couples/new" element={<CoupleNewPage />} />
+          <Route path="/admin/couples/new" element={<CoupleAdminGate />} />
           <Route path="/admin/couples/:slug/edit" element={<CoupleEditPage />} />
-          <Route path="/:slug" element={<InvitationPage />} />
+          <Route path="/:coupleSlug" element={<CouplePage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

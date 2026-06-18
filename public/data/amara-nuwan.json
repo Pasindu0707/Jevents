@@ -1,0 +1,88 @@
+{
+  "slug": "amara-nuwan",
+  "theme": {
+    "primaryColor": "#ba7b46",
+    "secondaryColor": "#506144",
+    "backgroundColor": "#14110f",
+    "lineColor": "#ba7b46",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#e0a878",
+    "dividerStyle": "line"
+  },
+  "meta": {
+    "title": "Amara & Nuwan · 14.02.2027",
+    "couple": "Amara & Nuwan"
+  },
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Amara",
+      "groom": "Nuwan",
+      "invitedText": "You are invited to the Wedding of",
+      "brideFont": "'Great Vibes', cursive",
+      "groomFont": "'Great Vibes', cursive",
+      "brideColor": "#2c2418",
+      "groomColor": "#2c2418",
+      "backgroundType": "image",
+      "backgroundImage": "/Jevents/assets/photos/wedding-04.jpg",
+      "overlayOpacity": 0.45,
+      "cardColor": "#ffffff",
+      "cardOpacity": 0.9,
+      "buttonText": "VIEW INVITATION",
+      "buttonTextColor": "#1c1916",
+      "buttonBgColor": "#ba7b46",
+      "particles": true
+    },
+    {
+      "type": "hero",
+      "bride": "Amara",
+      "groom": "Nuwan",
+      "date": "14 February 2027 · 5:00 PM",
+      "tagline": "A draft invitation — not yet published.",
+      "image": "/Jevents/assets/photos/wedding-02.jpg"
+    },
+    {
+      "type": "countdown",
+      "heading": "Until We Say \"I Do\"",
+      "targetDate": "2027-02-14T17:00:00+05:30"
+    },
+    {
+      "type": "couple",
+      "bride": "Amara",
+      "groom": "Nuwan"
+    },
+    {
+      "type": "events",
+      "heading": "The Celebration",
+      "events": [
+        {
+          "name": "Wedding Ceremony",
+          "date": "14 February 2027",
+          "time": "5:00 PM",
+          "venue": "Kandy City Hotel",
+          "address": "Kandy",
+          "mapUrl": "https://maps.google.com/?q=Kandy+City+Hotel"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "heading": "Moments",
+      "images": ["/Jevents/assets/photos/wedding-03.jpg"]
+    },
+    {
+      "type": "rsvp",
+      "heading": "RSVP",
+      "message": "RSVPs for this celebration are not open yet. Please check back soon.",
+      "rsvpSheetUrl": ""
+    },
+    {
+      "type": "footer",
+      "bride": "Amara",
+      "groom": "Nuwan",
+      "date": "14 February 2027",
+      "hashtag": "#AmaraNuwan2027"
+    }
+  ]
+}

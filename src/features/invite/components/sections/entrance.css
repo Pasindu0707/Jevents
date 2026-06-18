@@ -1,0 +1,166 @@
+.entrance {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem 1.25rem;
+}
+
+/* Inside the Puck admin preview, render as a normal in-flow block. */
+.entrance--inline {
+  position: relative;
+  inset: auto;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.entrance__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background:
+    radial-gradient(120% 120% at 50% 20%, rgba(201, 164, 92, 0.16), transparent 55%),
+    linear-gradient(160deg, #2a2520, #14110f 70%);
+  background-size: cover;
+  background-position: center;
+}
+
+.entrance__overlay {
+  position: absolute;
+  inset: 0;
+  background: #0d0b0a;
+}
+
+/* ---------------- Bokeh particles ---------------- */
+.entrance__bokeh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.entrance__dot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, rgba(231, 201, 135, 0.6) 55%, transparent 70%);
+  filter: blur(0.5px);
+  animation-name: bokehFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes bokehFloat {
+  0% {
+    transform: translateY(0) scale(0.9);
+  }
+  50% {
+    transform: translateY(-55vh) translateX(14px) scale(1.1);
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* ---------------- Oval card ---------------- */
+.entrance__card {
+  position: relative;
+  z-index: 2;
+  width: min(380px, 86vw);
+  min-height: min(660px, 88vh);
+  border-radius: 50% / 46%;
+  border: 1px solid rgba(201, 164, 92, 0.55);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(3.5rem, 8vw, 5rem) clamp(2rem, 7vw, 3.2rem);
+}
+
+.entrance__floral {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64%;
+  max-width: 230px;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.entrance__floral--top {
+  top: -8px;
+}
+
+.entrance__floral--bottom {
+  bottom: -8px;
+  /* Default flip; overridden by the per-element inline rotation. */
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.entrance__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.entrance__invited {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+  letter-spacing: 0.04em;
+  color: #6a5c44;
+  margin-bottom: 0.4rem;
+}
+
+.entrance__bride,
+.entrance__groom {
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.entrance__amp {
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: #c9a45c;
+  margin: 0.1rem 0;
+}
+
+.entrance__btn {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(1.4rem, 4vw, 2.2rem);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  padding: 0.85rem 1.9rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.entrance__btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+
+@media (max-width: 420px) {
+  .entrance__card {
+    border-radius: 46% / 42%;
+  }
+}

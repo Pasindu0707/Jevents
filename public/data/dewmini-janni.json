@@ -1,0 +1,118 @@
+{
+  "slug": "dewmini-janni",
+  "theme": {
+    "primaryColor": "#637953",
+    "secondaryColor": "#2c2418",
+    "backgroundColor": "#14110f",
+    "lineColor": "#637953",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#e69a44",
+    "dividerStyle": "line"
+  },
+  "meta": {
+    "title": "Dewmini & Janindu · 20.12.2026",
+    "couple": "Dewmini & Janindu"
+  },
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Dewmini",
+      "groom": "Janindu",
+      "invitedText": "You are invited to the Wedding of",
+      "brideFont": "'Great Vibes', cursive",
+      "groomFont": "'Great Vibes', cursive",
+      "brideColor": "#2c2418",
+      "groomColor": "#2c2418",
+      "backgroundType": "image",
+      "backgroundImage": "/Jevents/assets/photos/wedding-02.jpg",
+      "overlayOpacity": 0.45,
+      "cardColor": "#ffffff",
+      "cardOpacity": 0.9,
+      "buttonText": "VIEW INVITATION",
+      "buttonTextColor": "#1c1916",
+      "buttonBgColor": "#637953",
+      "particles": true
+    },
+    {
+      "type": "hero",
+      "bride": "Dewmini",
+      "groom": "Janindu",
+      "date": "20 December 2026 · 4:00 PM",
+      "tagline": "With hearts full of love and joy, we invite you to celebrate the beginning of our forever.",
+      "image": "/Jevents/assets/photos/hero.jpg"
+    },
+    {
+      "type": "countdown",
+      "heading": "Until We Say \"I Do\"",
+      "targetDate": "2026-12-20T16:00:00+05:30"
+    },
+    {
+      "type": "couple",
+      "bride": "Dewmini",
+      "groom": "Janindu"
+    },
+    {
+      "type": "story",
+      "heading": "Our Story",
+      "sideImage": "/Jevents/assets/photos/wedding-01.jpg",
+      "paragraphs": [
+        "We first met in Colombo in the winter of 2021. What began as a chance conversation over coffee grew into a love we never want to end.",
+        "On the 20th of December, surrounded by the people we love most, we say 'I do'."
+      ]
+    },
+    {
+      "type": "events",
+      "heading": "The Celebrations",
+      "events": [
+        {
+          "name": "Poruwa Ceremony",
+          "date": "20 December 2026",
+          "time": "4:00 PM",
+          "venue": "Galle Face Hotel",
+          "address": "2 Galle Rd, Colombo 03",
+          "mapUrl": "https://maps.google.com/?q=Galle+Face+Hotel+Colombo"
+        },
+        {
+          "name": "Reception & Dinner",
+          "date": "20 December 2026",
+          "time": "7:30 PM",
+          "venue": "Galle Face Hotel",
+          "address": "Grand Ballroom, 2 Galle Rd, Colombo 03",
+          "mapUrl": "https://maps.google.com/?q=Galle+Face+Hotel+Colombo"
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": "Order of the Day",
+      "items": [
+        { "time": "4:00 PM", "label": "Poruwa Ceremony" },
+        { "time": "7:30 PM", "label": "Reception & Dinner" }
+      ]
+    },
+    {
+      "type": "gallery",
+      "heading": "Moments",
+      "images": [
+        "/Jevents/assets/photos/wedding-01.jpg",
+        "/Jevents/assets/photos/wedding-03.jpg",
+        "/Jevents/assets/photos/wedding-04.jpg",
+        "/Jevents/assets/photos/wedding-05.jpg"
+      ]
+    },
+    {
+      "type": "rsvp",
+      "heading": "RSVP",
+      "message": "We would be honoured to have you with us. Kindly RSVP before December 1st.",
+      "rsvpSheetUrl": ""
+    },
+    {
+      "type": "footer",
+      "bride": "Dewmini",
+      "groom": "Janindu",
+      "date": "20 December 2026",
+      "hashtag": "#DewminiAndJanni"
+    }
+  ]
+}

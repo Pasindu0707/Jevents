@@ -1,0 +1,53 @@
+/* ===================== TASK 2 — Section wrapper ===================== */
+
+/* Background layers (color handled inline; image/video here) */
+.section-decor__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.section-decor__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Keep the real content above the background + particle layers. */
+.section-style > .section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Typography & colour overrides (only take effect when a section sets
+   the matching --s-* variable; otherwise fall back to the original look). ---- */
+.section-style {
+  font-family: var(--s-body-font, inherit);
+  font-size: var(--s-body-size, inherit);
+  color: var(--s-body-color, inherit);
+}
+
+.section-style :is(h1, h2, h3, h4, .section-title, .footer__couple) {
+  font-family: var(--s-heading-font, var(--font-serif));
+}
+
+.section-style .section-title {
+  font-size: var(--s-heading-size, clamp(2rem, 5vw, 3.4rem));
+  color: var(--s-heading-color, var(--cream));
+}
+
+.section-style .eyebrow {
+  color: var(--s-accent-color, var(--gold));
+}
+
+/* Common body-text classes pick up the section body colour. */
+.section-style .story__para,
+.section-style .couple__bio,
+.section-style .rsvp__message {
+  color: var(--s-body-color, var(--cream-dim));
+}

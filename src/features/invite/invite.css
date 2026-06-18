@@ -1,0 +1,204 @@
+/*
+ * Couple-invite global styles, ported from Project B (Invitely) and SCOPED to
+ * the `.invite-root` subtree so they cannot leak into the J Events marketing
+ * site or admin (which use Tailwind + a different set of CSS variables: --bg/
+ * --fg are RGB triples there, hex here).
+ *
+ * IMPORTANT: the scoping prefix is `:where(.invite-root)`, which adds ZERO
+ * specificity. That is deliberate — it reproduces Project B's exact cascade
+ * inside the wrapper. If we used a plain `.invite-root ` prefix instead, the
+ * ported global reset `* { margin:0; padding:0 }` would jump from specificity
+ * (0,0,0) to (0,1,0) and start TYING with / overriding the section CSS's
+ * single-class spacing rules (e.g. `.hero { padding }`, `.section-style
+ * .eyebrow`), which silently breaks every alignment. `:where()` keeps each
+ * ported rule at the exact specificity it had in Project B.
+ *
+ * `.invite-root` is the wrapper rendered by CouplePage / the admin preview.
+ * ThemeProvider writes the per-couple theme overrides as inline styles on that
+ * same element, so they always win over the base values defined here.
+ */
+
+:where(.invite-root) {
+  /* Dark elegant wedding palette */
+  --bg: #14110f;
+  --bg-alt: #1c1916;
+  --bg-deep: #0d0b0a;
+  --cream: #f4ece0;
+  --cream-dim: #cabfae;
+  --gold: #c9a45c;
+  --gold-bright: #e7c987;
+  --gold-deep: #9a7b3f;
+  --line: rgba(201, 164, 92, 0.28);
+
+  /* TASK 1 — global theme controls (overridden by ThemeProvider) */
+  --primary: var(--gold);
+  --secondary: #2c2418;
+  --accent-text: var(--gold-bright);
+  --line-style: solid;
+  --line-thickness: 1px;
+  --divider-style: line;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+
+  color-scheme: dark;
+
+  /* was `body` in Project B */
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Project B's global reset — kept at zero specificity via :where so every
+   section-CSS class rule still beats it, exactly like in Project B. */
+:where(.invite-root),
+:where(.invite-root) *,
+:where(.invite-root) *::before,
+:where(.invite-root) *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:where(.invite-root) :is(h1, h2, h3, h4) {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+:where(.invite-root) a {
+  color: var(--gold-bright);
+  text-decoration: none;
+}
+
+:where(.invite-root) img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Shared section primitives */
+:where(.invite-root) .section {
+  position: relative;
+  padding: clamp(4.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 4rem);
+  overflow: hidden;
+}
+
+:where(.invite-root) .section__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+:where(.invite-root) .eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+
+:where(.invite-root) .section-title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+}
+
+/* TASK 1 — divider respects theme line colour / style / thickness, and the
+   global "section divider style" set via [data-divider] on the wrapper. */
+:where(.invite-root) .divider {
+  width: 64px;
+  height: 0;
+  border: none;
+  border-top: var(--line-thickness, 1px) var(--line-style, solid) var(--gold);
+  margin: 1.5rem auto;
+}
+
+/* Floral ornament divider */
+:where(.invite-root[data-divider='floral']) .divider {
+  width: auto;
+  border: none;
+  height: auto;
+}
+
+:where(.invite-root[data-divider='floral']) .divider::before {
+  content: '❧';
+  display: block;
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* No divider */
+:where(.invite-root[data-divider='none']) .divider {
+  display: none;
+}
+
+:where(.invite-root) .text-center {
+  text-align: center;
+}
+
+/* Scroll-reveal initial state (GSAP animates these in) */
+:where(.invite-root) .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+:where(.invite-root) .btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 0.95rem 2.4rem;
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+:where(.invite-root) .btn:hover {
+  background: var(--gold);
+  color: var(--bg-deep);
+}
+
+:where(.invite-root) ::selection {
+  background: var(--gold);
+  color: var(--bg-deep);
+}
+
+/* Loading / error states */
+:where(.invite-root) .page-state {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  color: var(--cream-dim);
+}
+
+:where(.invite-root) .page-state__mark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+:where(.invite-root) .page-state h1 {
+  color: var(--cream);
+  font-size: 2rem;
+}
