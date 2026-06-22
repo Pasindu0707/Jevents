@@ -7,6 +7,7 @@ import { Gallery } from '@/features/marketing/components/sections/Gallery'
 import { Hero } from '@/features/marketing/components/sections/Hero'
 // import { Journey } from '@/features/marketing/components/sections/Journey'
 // import { PlatformFlow } from '@/features/marketing/components/sections/PlatformFlow'
+import { Products } from '@/features/marketing/components/sections/Products'
 import { Services } from '@/features/marketing/components/sections/Services'
 // import { Testimonials } from '@/features/marketing/components/sections/Testimonials'
 import { useReveal } from '@/hooks/useReveal'
@@ -27,6 +28,7 @@ export function MarketingPage() {
 
       <main id="main" className="mx-auto max-w-6xl px-5 pb-8 md:px-8">
         <Services />
+        <Products />
         <Features />
         {/* <PlatformFlow /> */}
         {/* <Journey /> */}
