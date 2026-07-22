@@ -3,6 +3,9 @@ import SectionWrapper from './SectionWrapper'
 import './sections.css'
 
 export default function EventsSection({ heading, events, style }: EventsSectionData) {
+  const mapClass =
+    style?.mapButtonStyle === 'button' ? 'events__map events__map--button' : 'events__map'
+
   return (
     <SectionWrapper className="section events" id="events" style={style}>
       <div className="section__inner">
@@ -29,12 +32,12 @@ export default function EventsSection({ heading, events, style }: EventsSectionD
                 {ev.address && <p className="events__address">{ev.address}</p>}
                 {ev.mapUrl && (
                   <a
-                    className="events__map"
+                    className={mapClass}
                     href={ev.mapUrl}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    View Map
+                    {ev.mapLabel ?? 'View Map'}
                   </a>
                 )}
               </div>

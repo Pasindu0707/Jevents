@@ -5,6 +5,8 @@ import './sections.css'
 export default function CoupleSection({
   bride,
   groom,
+  brideLabel,
+  groomLabel,
   brideBio,
   groomBio,
   brideImage,
@@ -29,7 +31,7 @@ export default function CoupleSection({
               {!brideImage && <span className="couple__initial">{bride.charAt(0)}</span>}
             </div>
             <h3 className="couple__name">{bride}</h3>
-            <p className="couple__role">The Bride</p>
+            <p className="couple__role">{brideLabel ?? 'The Bride'}</p>
             {brideBio && <p className="couple__bio">{brideBio}</p>}
           </article>
 
@@ -43,7 +45,7 @@ export default function CoupleSection({
               {!groomImage && <span className="couple__initial">{groom.charAt(0)}</span>}
             </div>
             <h3 className="couple__name">{groom}</h3>
-            <p className="couple__role">The Groom</p>
+            <p className="couple__role">{groomLabel ?? 'The Groom'}</p>
             {groomBio && <p className="couple__bio">{groomBio}</p>}
           </article>
         </div>

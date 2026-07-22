@@ -1,7 +1,7 @@
 import { createElement, type ReactNode } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import type { SectionStyle } from '../../types'
-import { sectionStyleVars } from './sectionStyle'
+import { buildGradient, sectionStyleVars } from './sectionStyle'
 import SectionParticles from './SectionParticles'
 import './section-wrapper.css'
 
@@ -41,12 +41,12 @@ export default function SectionWrapper({
   const bgType = style?.backgroundType
   const cssVars = sectionStyleVars(style)
 
-  // A solid background colour is applied directly to the element; image/video
-  // are rendered as absolutely-positioned layers behind the content.
-  const inlineStyle =
-    bgType === 'color' && style?.backgroundColor
-      ? { ...cssVars, background: style.backgroundColor }
-      : cssVars
+  // A solid colour or gradient is painted directly onto the element; image and
+  // video are rendered as absolutely-positioned layers behind the content.
+  const gradient = bgType === 'gradient' ? buildGradient(style) : undefined
+  const paint =
+    gradient ?? (bgType === 'color' && style?.backgroundColor ? style.backgroundColor : undefined)
+  const inlineStyle = paint ? { ...cssVars, background: paint } : cssVars
 
   const showImage = bgType === 'image' && !!style?.backgroundImage
   const showVideo = bgType === 'video' && !!style?.backgroundVideo

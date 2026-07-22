@@ -53,6 +53,12 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+
+  /* Cormorant Garamond defaults to old-style figures: 0/1/2 sit at x-height
+     while 3/4/7/9 drop below the baseline, so dates and phone numbers look
+     like the digits are at different sizes. Lining figures put every digit on
+     the same cap height. Inherited, so it covers the whole invitation. */
+  font-variant-numeric: lining-nums;
 }
 
 /* Project B's global reset — kept at zero specificity via :where so every
@@ -117,7 +123,11 @@
   width: 64px;
   height: 0;
   border: none;
-  border-top: var(--line-thickness, 1px) var(--line-style, solid) var(--gold);
+  /* Prefer the section's own accent (a gold divider on a gold section would be
+     invisible), then the theme's dedicated `lineColor`, then --gold
+     (primaryColor) for couples that set neither. Matches how .eyebrow resolves. */
+  border-top: var(--line-thickness, 1px) var(--line-style, solid)
+    var(--s-accent-color, var(--line, var(--gold)));
   margin: 1.5rem auto;
 }
 
@@ -132,7 +142,7 @@
   content: '❧';
   display: block;
   text-align: center;
-  color: var(--gold);
+  color: var(--s-accent-color, var(--line, var(--gold)));
   font-size: 1.5rem;
   line-height: 1;
 }
@@ -146,9 +156,11 @@
   text-align: center;
 }
 
-/* Separator rendered between sections by CouplePage. Uses the themed line. */
+/* Separator rendered between sections by CouplePage. Uses the themed line.
+   Kept short and centred so it reads as an ornament between sections rather
+   than a rule across the page. */
 :where(.invite-root) .section-hr {
-  width: min(1080px, 86%);
+  width: min(420px, 55%);
   height: 0;
   border: none;
   border-top: var(--line-thickness, 1px) var(--line-style, solid) var(--line);

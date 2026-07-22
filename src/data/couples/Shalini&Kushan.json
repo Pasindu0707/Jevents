@@ -1,0 +1,183 @@
+{
+  "slug": "Shalini&Kushan",
+  "theme": {
+    "primaryColor": "#637953",
+    "secondaryColor": "#2c2418",
+    "backgroundColor": "#14110f",
+    "lineColor": "#daa628",
+    "lineStyle": "solid",
+    "lineThickness": 1,
+    "accentTextColor": "#daa628",
+    "dividerStyle": "line"
+  },
+  "meta": {
+    "title": "Shalini & Kushan · 31.08.2026",
+    "couple": "Shalini & Kushan"
+  },
+  "sections": [
+    {
+      "type": "entrance",
+      "bride": "Shalini",
+      "groom": "Kushan",
+      "invitedText": "You are invited to the Wedding of",
+      "brideFont": "'Great Vibes', cursive",
+      "groomFont": "'Great Vibes', cursive",
+      "brideColor": "#daa628",
+      "groomColor": "#daa628",
+      "backgroundType": "image",
+      "backgroundImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1784726183/h17uzodt3d62qtoyqsfy.png",
+      "overlayOpacity": 0,
+      "topFloralRotation": -11,
+      "cardColor": "#ffffff",
+      "cardOpacity": 0.8,
+      "buttonText": "VIEW INVITATION",
+      "buttonTextColor": "#1c1916",
+      "buttonBgColor": "#daa628",
+      "particles": true
+    },
+    {
+      "type": "couple",
+      "style": {
+        "backgroundColor": "#ffffff",
+        "backgroundType": "color",
+        "headingColor": "#b8860b",
+        "bodyColor": "#4a3f2a",
+        "nameColor": "#b8860b",
+        "labelColor": "#8a6414",
+        "accentColor": "#daa628",
+        "nameFontSize": 46,
+        "labelFontSize": 20,
+        "bodyFontSize": 18,
+        "imageSize": 300,
+        "imageGap": 16,
+        "columnGap": 20,
+        "minHeight": "auto",
+        "paddingTop": 32,
+        "paddingBottom": 32,
+        "particleCount": 34,
+        "particlesEnabled": true,
+        "particleStyle": "petals",
+        "particleColor": "#daa628"
+      },
+      "bride": "Shalini",
+      "brideLabel": "The Bride",
+      "brideImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1784729459/xg7i0pjat6slurxrv3fm.png",
+      "groom": "Kushan",
+      "groomLabel": "The Groom",
+      "groomImage": "https://res.cloudinary.com/dsbqzgxoi/image/upload/v1784729992/hm9bok2sv31utugsklmr.png",
+      "verse": ""
+    },
+    {
+      "type": "events",
+      "heading": "The Celebration",
+      "events": [
+        {
+          "name": "Church Ceremony",
+          "date": "31st August 2026",
+          "time": "8:30 AM",
+          "venue": "St. Peter's Church",
+          "address": "Chilaw Road, Negombo",
+          "mapUrl": "https://maps.app.goo.gl/cwjDFHAs8R16SGeX8",
+          "mapLabel": "View Map"
+        },
+        {
+          "name": "Poruwa Ceremony",
+          "date": "31 August 2026",
+          "time": "10:23 AM",
+          "venue": "Grandeeza Hotel",
+          "address": "Colombo Road, Kurana",
+          "mapUrl": "https://maps.app.goo.gl/darJzxXrWPWhxNSx5",
+          "mapLabel": "View Map"
+        }
+      ],
+      "style": {
+        "backgroundType": "gradient",
+        "backgroundColor": "#daa628",
+        "gradientFrom": "#b8860b",
+        "gradientVia": "#f4dc92",
+        "gradientTo": "#b8860b",
+        "gradientAngle": 135,
+        "overlayColor": "#daa628",
+        "overlayOpacity": 0,
+        "headingColor": "#1c1916",
+        "bodyColor": "#1c1916",
+        "accentColor": "#1c1916",
+        "dateColor": "#1c1916",
+        "timeColor": "#1c1916",
+        "headingFontSize": 42,
+        "bodyFontSize": 20,
+        "dateFontSize": 28,
+        "timeFontSize": 40,
+        "timeFontWeight": 700,
+        "timeLetterSpacing": 0.02,
+        "boxBgColor": "rgba(255, 255, 255, 0.22)",
+        "boxBorderColor": "#1c1916",
+        "mapButtonStyle": "button",
+        "mapButtonBgColor": "#1c1916",
+        "mapButtonTextColor": "#daa628",
+        "mapButtonBorderColor": "#1c1916",
+        "mapButtonRadius": 999,
+        "mapButtonFontSize": 16,
+        "paddingTop": 56,
+        "paddingBottom": 56,
+        "particlesEnabled": false
+      }
+    },
+    {
+      "type": "countdown",
+      "heading": "Until We Say \"I Do\"",
+      "targetDate": "2026-08-31T10:00:00+05:30",
+      "style": {
+        "backgroundType": "color",
+        "backgroundColor": "#ffffff",
+        "overlayColor": "#ffffff",
+        "overlayOpacity": 0,
+        "headingColor": "#b8860b",
+        "bodyColor": "#5a4a2c",
+        "accentColor": "#8a6414",
+        "numberColor": "#1c1916",
+        "labelColor": "#8a6414",
+        "numberFontSize": 46,
+        "labelFontSize": 13,
+        "headingFontSize": 36,
+        "boxBgColor": "#f7f1e4",
+        "boxBorderColor": "#daa628",
+        "minHeight": "auto",
+        "paddingTop": 32,
+        "paddingBottom": 32,
+        "particlesEnabled": true,
+        "particleCount": 25,
+        "particleStyle": "petals",
+        "particleColor": "#daa628"
+      }
+    },
+    {
+      "type": "footer",
+      "bride": "Shalini",
+      "groom": "Kushan",
+      "date": "31 August 2026",
+      "hashtag": "",
+      "contacts": [
+        {
+          "name": "RSVP",
+          "phone": "077 063 7824  /  076 842 8521"
+        }
+      ],
+      "style": {
+        "backgroundType": "color",
+        "backgroundColor": "#ffffff",
+        "minHeight": "auto",
+        "paddingTop": 28,
+        "paddingBottom": 28,
+        "headingColor": "#b8860b",
+        "bodyColor": "#5a4a2c",
+        "accentColor": "#8a6414",
+        "dateFontWeight": 700,
+        "contactColor": "#6b6b6b",
+        "contactNameFontSize": 20,
+        "contactPhoneFontSize": 34,
+        "bodyFontSize": 16
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import type { EntranceSectionData } from '../../types'
+import { useEntranceGate } from '../../lib/entranceGate'
 import './entrance.css'
 
 interface Props extends EntranceSectionData {
@@ -68,6 +69,7 @@ export default function EntranceSection(props: Props) {
 
   const root = useRef<HTMLDivElement>(null)
   const [dismissed, setDismissed] = useState(false)
+  const { openGate } = useEntranceGate()
 
   // Apply translucency through the background alpha so card text stays crisp.
   const cardBg = hexToRgba(cardColor, cardOpacity)
@@ -118,7 +120,10 @@ export default function EntranceSection(props: Props) {
     // Kick off the site music on this first user interaction.
     window.dispatchEvent(new CustomEvent('invitely:play'))
     document.body.style.overflow = ''
-    gsap.to(root.current, {
+
+    const tl = gsap.timeline()
+    // Lift the card away rather than a flat fade — it reads as a veil rising.
+    tl.to(root.current, {
       opacity: 0,
       duration: 0.9,
       ease: 'power2.inOut',
@@ -129,6 +134,10 @@ export default function EntranceSection(props: Props) {
         else window.scrollTo({ top: 0, behavior: 'smooth' })
       },
     })
+      .to('.entrance__card', { scale: 1.06, y: -24, duration: 0.9, ease: 'power2.in' }, 0)
+      // Release the sections mid-fade so they animate in *through* the veil
+      // instead of waiting for a blank beat after it clears.
+      .call(openGate, undefined, 0.45)
   }
 
   if (dismissed) return null

@@ -32,6 +32,16 @@
   color: var(--s-body-color, inherit);
 }
 
+/* ---- Layout overrides. Each section keeps its own default vertical rhythm in
+   `--section-pad-*` (the footer sets a tighter one); `--s-pad-*` from the
+   couple JSON wins over it. Done with variables rather than competing
+   selectors so the result doesn't depend on stylesheet import order. ---- */
+.section-style.section {
+  min-height: var(--s-min-height, auto);
+  padding-top: var(--s-pad-top, var(--section-pad-top, clamp(4.5rem, 10vw, 9rem)));
+  padding-bottom: var(--s-pad-bottom, var(--section-pad-bottom, clamp(4.5rem, 10vw, 9rem)));
+}
+
 .section-style :is(h1, h2, h3, h4, .section-title, .footer__couple) {
   font-family: var(--s-heading-font, var(--font-serif));
 }

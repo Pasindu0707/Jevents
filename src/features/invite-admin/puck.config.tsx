@@ -109,6 +109,7 @@ const sectionStyleField = {
       label: 'Background · Type',
       options: [
         { label: 'Colour', value: 'color' },
+        { label: 'Gradient', value: 'gradient' },
         { label: 'Image', value: 'image' },
         { label: 'Video', value: 'video' },
       ],
@@ -119,6 +120,25 @@ const sectionStyleField = {
         <ColorField label="Background · Colour" value={value} onChange={onChange} defaultValue="#14110f" />
       ),
     },
+    gradientFrom: {
+      type: 'custom' as const,
+      render: ({ value, onChange }: AnyFieldProps) => (
+        <ColorField label="Gradient · Start" value={value} onChange={onChange} defaultValue="#b8860b" />
+      ),
+    },
+    gradientVia: {
+      type: 'custom' as const,
+      render: ({ value, onChange }: AnyFieldProps) => (
+        <ColorField label="Gradient · Middle (sheen)" value={value} onChange={onChange} defaultValue="#f2d98b" />
+      ),
+    },
+    gradientTo: {
+      type: 'custom' as const,
+      render: ({ value, onChange }: AnyFieldProps) => (
+        <ColorField label="Gradient · End" value={value} onChange={onChange} defaultValue="#b8860b" />
+      ),
+    },
+    gradientAngle: { type: 'number' as const, label: 'Gradient · Angle (deg)' },
     backgroundImage: {
       type: 'custom' as const,
       render: ({ value, onChange }: AnyFieldProps) => (

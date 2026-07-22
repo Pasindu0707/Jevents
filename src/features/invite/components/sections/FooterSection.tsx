@@ -1,6 +1,19 @@
+import { Fragment } from 'react'
 import type { FooterSectionData } from '../../types'
 import SectionWrapper from './SectionWrapper'
 import './sections.css'
+
+/**
+ * A contact often carries two numbers as one string ("077 … / 076 …"). Split
+ * them so each becomes its own tel: link — a combined href can't be dialled —
+ * and so a narrow screen breaks between the numbers instead of mid-number.
+ */
+function splitPhones(phone: string): string[] {
+  return phone
+    .split('/')
+    .map((p) => p.trim())
+    .filter(Boolean)
+}
 
 export default function FooterSection({
   bride,
@@ -29,9 +42,23 @@ export default function FooterSection({
               <div className="footer__contact" key={i}>
                 <span className="footer__contact-name">{c.name}</span>
                 {c.phone && (
-                  <a className="footer__contact-phone" href={`tel:${c.phone}`}>
-                    {c.phone}
-                  </a>
+                  <span className="footer__contact-phones">
+                    {splitPhones(c.phone).map((num, j, arr) => (
+                      <Fragment key={j}>
+                        <a
+                          className="footer__contact-phone"
+                          href={`tel:${num.replace(/[^+\d]/g, '')}`}
+                        >
+                          {num}
+                        </a>
+                        {j < arr.length - 1 && (
+                          <span className="footer__contact-sep" aria-hidden>
+                            /
+                          </span>
+                        )}
+                      </Fragment>
+                    ))}
+                  </span>
                 )}
               </div>
             ))}

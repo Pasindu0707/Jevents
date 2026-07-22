@@ -19,6 +19,8 @@ export interface EventItem {
   time: string
   address?: string
   mapUrl?: string
+  /** Text on the map link/button. Defaults to "View Map". */
+  mapLabel?: string
   photo?: string
 }
 
@@ -81,7 +83,9 @@ export type ParticleStyle =
   | 'fireflies'
 
 export type ParticleSpeed = 'slow' | 'medium' | 'fast'
-export type SectionBackgroundType = 'color' | 'image' | 'video'
+export type SectionBackgroundType = 'color' | 'gradient' | 'image' | 'video'
+
+export type MapButtonStyle = 'link' | 'button'
 
 export interface SectionStyle {
   // Typography
@@ -99,12 +103,76 @@ export interface SectionStyle {
   backgroundVideo?: string
   overlayColor?: string
   overlayOpacity?: number
+  /**
+   * Gradient stops, used when backgroundType is 'gradient'. A light `via`
+   * between two deeper ends reads as a metallic sheen — the way to make a
+   * flat gold look like gold leaf.
+   */
+  gradientFrom?: string
+  gradientVia?: string
+  gradientTo?: string
+  /** Direction in degrees. 135 = top-left to bottom-right. Default 135. */
+  gradientAngle?: number
   // Particles
   particlesEnabled?: boolean
   particleStyle?: ParticleStyle
   particleColor?: string
   particleCount?: number
   particleSpeed?: ParticleSpeed
+
+  /* ---- Layout (any section) ---- */
+  /** CSS length, or 'auto' to drop the section's minimum height. */
+  minHeight?: string | number
+  /** Vertical padding in px — overrides the section's default clamp(). */
+  paddingTop?: number
+  paddingBottom?: number
+
+  /* ---- Names & labels (couple / countdown) ---- */
+  /** Colour of the large names (couple) — falls back to headingColor. */
+  nameColor?: string
+  nameFontSize?: number
+  /** Colour of the small caps labels ("The Bride", "Days", …). */
+  labelColor?: string
+  labelFontSize?: number
+
+  /* ---- Couple photos ---- */
+  /** Diameter of the round portraits in px. */
+  imageSize?: number
+  /** Gap between a portrait and the name below it, px. */
+  imageGap?: number
+  /** Gap between the bride / "&" / groom columns, px. */
+  columnGap?: number
+
+  /* ---- Events ---- */
+  dateColor?: string
+  dateFontSize?: number
+  /** CSS font-weight for the date line (events cards and the footer date). */
+  dateFontWeight?: number
+  timeColor?: string
+  timeFontSize?: number
+  /** CSS font-weight for the event time, e.g. 700. */
+  timeFontWeight?: number
+  /** Tracking for the event time, in em. The default 0.24 is very airy. */
+  timeLetterSpacing?: number
+  /** Render the map link as an underlined link (default) or a filled button. */
+  mapButtonStyle?: MapButtonStyle
+  mapButtonBgColor?: string
+  mapButtonTextColor?: string
+  mapButtonBorderColor?: string
+  /** Corner radius in px — use a large value (999) for a pill. */
+  mapButtonRadius?: number
+  mapButtonFontSize?: number
+
+  /* ---- Countdown ---- */
+  numberColor?: string
+  numberFontSize?: number
+  boxBgColor?: string
+  boxBorderColor?: string
+
+  /* ---- Footer ---- */
+  contactColor?: string
+  contactNameFontSize?: number
+  contactPhoneFontSize?: number
 }
 
 export interface SectionBase {
@@ -164,6 +232,9 @@ export interface CoupleSectionData extends SectionBase {
   type: 'couple'
   bride: string
   groom: string
+  /** Caption under the name. Defaults to "The Bride" / "The Groom". */
+  brideLabel?: string
+  groomLabel?: string
   brideBio?: string
   groomBio?: string
   brideImage?: string

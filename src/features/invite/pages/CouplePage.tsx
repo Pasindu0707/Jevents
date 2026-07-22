@@ -1,7 +1,9 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import type { CoupleData } from '../types'
 import { renderSection } from '../registry'
+import { EntranceGateContext } from '../lib/entranceGate'
 import MusicPlayer from '../components/MusicPlayer'
 import ThemeProvider from '../components/ThemeProvider'
 import AgencyFooter from '../components/AgencyFooter'
@@ -19,10 +21,28 @@ export default function CouplePage() {
   // invite palette can't leak into the marketing site / admin.
   const rootRef = useRef<HTMLDivElement>(null)
 
+  // Sections hold their scroll-reveal until the entrance gate opens. A couple
+  // with no entrance section has nothing to wait for, so it starts open.
+  const hasEntrance =
+    state.status === 'ready' && state.data.sections.some((s) => s.type === 'entrance')
+  const [gateOpen, setGateOpen] = useState(false)
+  const openGate = useCallback(() => setGateOpen(true), [])
+  const gate = useMemo(
+    () => ({ open: gateOpen || !hasEntrance, openGate }),
+    [gateOpen, hasEntrance, openGate],
+  )
+
+  // The entrance locks body scroll, so the document was a viewport tall while it
+  // showed. Recompute trigger positions now that the real page height applies.
+  useEffect(() => {
+    if (gate.open) ScrollTrigger.refresh()
+  }, [gate.open])
+
   useEffect(() => {
     if (!coupleSlug) return
     let cancelled = false
     setState({ status: 'loading' })
+    setGateOpen(false)
 
     // BASE_URL is '/Jevents/' here, so the JSON lives at /Jevents/data/<slug>.json.
     fetch(`${import.meta.env.BASE_URL}data/${coupleSlug}.json`)
@@ -68,19 +88,21 @@ export default function CouplePage() {
   }
 
   return (
-    <div className="invite-root" ref={rootRef}>
-      <ThemeProvider theme={state.data.theme} targetRef={rootRef} />
-      <main>
-        {state.data.sections.map((section, i) => (
-          <Fragment key={section.id ?? i}>
-            {renderSection(section, i)}
-            {/* Themed separator after every section except the last. */}
-            {i < state.data.sections.length - 1 && <hr className="section-hr" />}
-          </Fragment>
-        ))}
-      </main>
-      <AgencyFooter />
-      {state.data.musicUrl && <MusicPlayer src={state.data.musicUrl} />}
-    </div>
+    <EntranceGateContext.Provider value={gate}>
+      <div className="invite-root" ref={rootRef}>
+        <ThemeProvider theme={state.data.theme} targetRef={rootRef} />
+        <main>
+          {state.data.sections.map((section, i) => (
+            <Fragment key={section.id ?? i}>
+              {renderSection(section, i)}
+              {/* Themed separator after every section except the last. */}
+              {i < state.data.sections.length - 1 && <hr className="section-hr" />}
+            </Fragment>
+          ))}
+        </main>
+        <AgencyFooter />
+        {state.data.musicUrl && <MusicPlayer src={state.data.musicUrl} />}
+      </div>
+    </EntranceGateContext.Provider>
   )
 }
