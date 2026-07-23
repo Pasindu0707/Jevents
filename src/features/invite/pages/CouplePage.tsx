@@ -71,9 +71,8 @@ export default function CouplePage({ slugOverride }: { slugOverride?: string } =
   if (state.status === 'loading') {
     return (
       <div className="invite-root" ref={rootRef}>
-        <div className="page-state">
-          <span className="page-state__mark">&amp;</span>
-          <p>Loading…</p>
+        <div className="app-loader">
+          <div className="app-loader__ring" />
         </div>
       </div>
     )

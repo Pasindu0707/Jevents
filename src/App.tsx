@@ -52,7 +52,13 @@ const CoupleEditPage = lazy(() =>
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 function Loading() {
-  return <div className="grid min-h-dvh place-items-center text-slate-400">Loading…</div>
+  // Same spinner as the pre-mount boot loader in index.html, so the handoff
+  // from "page loading" to "app loading" is seamless (no text flash).
+  return (
+    <div className="app-loader">
+      <div className="app-loader__ring" />
+    </div>
+  )
 }
 
 function App() {

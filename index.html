@@ -63,6 +63,36 @@
         } catch {}
       })()
     </script>
+    <!-- Instant loading spinner: shown before any JS/CSS loads, so the page is
+         never a blank white gap while the app chunks download. React replaces
+         #root's contents on mount, which removes it automatically. -->
+    <style>
+      @keyframes app-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .app-loader {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+      }
+      .app-loader--boot {
+        background: #ffffff;
+      }
+      html.dark .app-loader--boot {
+        background: #0d0b0a;
+      }
+      .app-loader__ring {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 3px solid rgba(218, 166, 40, 0.22);
+        border-top-color: #daa628;
+        animation: app-spin 0.8s linear infinite;
+      }
+    </style>
   </head>
   <body>
     <!-- Restores the real path after the GitHub Pages 404.html SPA redirect.
@@ -81,7 +111,9 @@
         }
       })(window.location)
     </script>
-    <div id="root"></div>
+    <div id="root">
+      <div class="app-loader app-loader--boot"><div class="app-loader__ring"></div></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
