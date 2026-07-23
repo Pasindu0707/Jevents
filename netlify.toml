@@ -1,0 +1,18 @@
+# Netlify serves the app at a ROOT domain (unlike GitHub Pages, which uses the
+# /Jevents/ project sub-path), so build with BASE_PATH=/. This deploy exists to
+# host the per-couple custom domains (see src/features/invite/lib/coupleDomains.ts);
+# the main jevents site stays on GitHub Pages, untouched.
+[build]
+  command = "BASE_PATH=/ npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Single-page-app fallback: every path serves index.html so client-side routes
+# (/, /:coupleSlug, /admin…) resolve. Netlify handles this natively, so the
+# GitHub-Pages 404.html hack isn't involved here.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

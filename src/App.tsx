@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { coupleSlugForHost } from '@/features/invite/lib/coupleDomains'
 
 // Every page is lazy-loaded so each route only pulls its own dependencies:
 // the marketing homepage's GSAP/Framer libs, the templates, and the admin
@@ -55,11 +56,19 @@ function Loading() {
 }
 
 function App() {
+  // On a per-couple custom domain (e.g. shalinikushan.space) the root URL opens
+  // that couple's invitation instead of the marketing homepage. Everywhere else
+  // this is undefined and "/" behaves normally.
+  const hostSlug = coupleSlugForHost()
+
   return (
     <BrowserRouter basename={basename}>
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/" element={<MarketingPage />} />
+          <Route
+            path="/"
+            element={hostSlug ? <CouplePage slugOverride={hostSlug} /> : <MarketingPage />}
+          />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<DashboardView />} />
             <Route path="invitations" element={<InvitationsView />} />

@@ -14,8 +14,12 @@ type State =
   | { status: 'error'; message: string }
   | { status: 'ready'; data: CoupleData }
 
-export default function CouplePage() {
-  const { coupleSlug } = useParams<{ coupleSlug: string }>()
+export default function CouplePage({ slugOverride }: { slugOverride?: string } = {}) {
+  const params = useParams<{ coupleSlug: string }>()
+  // On a per-couple custom domain the invite is served at "/", so the slug
+  // comes from the domain map rather than the URL. Falls back to the route
+  // param for the normal /:coupleSlug pages.
+  const coupleSlug = slugOverride ?? params.coupleSlug
   const [state, setState] = useState<State>({ status: 'loading' })
   // The per-couple theme is written onto this wrapper (not <html>) so the dark
   // invite palette can't leak into the marketing site / admin.
